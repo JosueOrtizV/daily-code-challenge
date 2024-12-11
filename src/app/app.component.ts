@@ -24,8 +24,8 @@ export class AppComponent implements OnInit {
     this.userService.loading$.subscribe(loading => this.loading = loading);
     this.userService.loggedIn$.subscribe(loggedIn => this.loggedIn = loggedIn);
 
-    // if (!this.loading && this.loading) {
-    //   this.csrfService.getCsrfToken().toPromise();
-    // }
+    if (!this.loading && this.loggedIn) {
+      this.csrfService.getCsrfToken().toPromise();
+    }
   }
 }
