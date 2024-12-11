@@ -1,0 +1,55 @@
+<div class="login-container container">
+    <div class="card">
+        <div class="info">
+            <h2>{{ 'login.welcome' | translate }}</h2>
+            <h4>{{ 'login.start_adventure' | translate }}</h4>
+        </div>
+        <hr>
+        <div class="login-card">
+            <div class="input-group" *ngIf="!loading && !loggedIn">
+                <h3>{{ 'login.login_title' | translate }}</h3>
+                <label for="username" id="username-label">{{ 'login.username_label' | translate }}</label>
+                <div id="username-display">
+                    <input id="username" [(ngModel)]="username" [placeholder]="'login.username_placeholder' | translate" type="text" name="username"/>
+                </div>
+                <button class="tooltip main-btn btn-hover" id="save-btn" (click)="showLoginConfirm()">
+                    {{ 'login.login_button' | translate }}
+                    <span #tooltip1 class="tooltiptext">{{ 'login.login_tooltip' | translate }}</span>
+                </button>
+                <div *ngIf="errorAnonymous$ | async as errorAnonymous" class="error-message">
+                    <p>{{ errorAnonymous }}</p>
+                </div>
+            </div>
+            <hr *ngIf="!loading && !loggedIn">
+            <div *ngIf="!loading && !loggedIn" class="login">
+                <h3>{{ 'login.login_with' | translate }}</h3>
+                <button (click)="loginWithGoogle()" class="main-btn btn-hover">{{ 'login.google_button' | translate }}</button>
+                <div *ngIf="errorGoogle$ | async as errorGoogle" class="error-message">
+                    <p>{{ errorGoogle }}</p>
+                </div>
+                <button (click)="loginWithGithub()" class="main-btn btn-hover">{{ 'login.github_button' | translate }}</button>
+                <div *ngIf="errorGithub$ | async as errorGithub" class="error-message">
+                    <p>{{ errorGithub }}</p>
+                </div>
+            </div>
+            <div *ngIf="loggedIn" class="logged">
+                <p id="success">{{ 'login.success_message' | translate }}</p>
+                <p>{{ 'login.your_username' | translate }} <strong>{{ username }}</strong></p>
+                <p>{{ countdownMessage }}</p>
+            </div>
+        </div>
+    </div>
+
+    <ng-template #loginConfirm>
+        <div class="modal">
+            <div class="modal-content">
+                <p>{{ 'login.confirmLogin' | translate }}</p>
+                <div class="modal-actions">
+                    <button class="main-btn btn-cancel" (click)="hideLoginConfirm()">{{ 'login.cancel' | translate }}</button>
+                    <button class="main-btn btn-confirm" (click)="confirmLogin()">{{ 'login.confirm' | translate }}</button>
+                </div>
+            </div>
+        </div>
+    </ng-template>
+    <div *ngIf="showLoginModal" [ngTemplateOutlet]="loginConfirm"></div>
+</div>

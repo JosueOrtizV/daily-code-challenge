@@ -1,0 +1,13 @@
+<section class="welcome">
+    <div class="container" id="welcome-container">
+        <div id="welcome-text">
+            <h1 *ngIf="!loading && loggedIn">{{ 'home.welcome.loggedIn' | translate: { username: username } }}</h1>
+            <h1 *ngIf="!loading && !loggedIn">{{ 'home.welcome.notLoggedIn' | translate }}</h1>
+            <p *ngIf="!loading"><strong>{{ 'home.welcome.description' | translate }}</strong></p>
+            <a *ngIf="!loading" [routerLink]="['/daily-challenge']" class="main-btn btn-hover">{{ 'home.welcome.startChallenge' | translate }}</a>
+        </div>
+        <div id="welcome-img">
+            <img src="assets/images/boy-programming.png" alt="boy-programming">
+        </div>
+    </div>
+</section>

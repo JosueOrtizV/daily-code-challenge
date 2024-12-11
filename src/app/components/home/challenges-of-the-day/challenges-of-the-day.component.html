@@ -1,0 +1,12 @@
+<section class="challenges-of-the-day">
+    <div class="container">
+        <h2>{{ 'home.challengesOfTheDay.title' | translate }}</h2>
+        <ul *ngIf="!loading">
+            <li class="challenge-item easy">{{ 'home.challengesOfTheDay.easy' | translate }} - {{ dailyChallenges.easy }}</li>
+            <li class="challenge-item intermediate">{{ 'home.challengesOfTheDay.intermediate' | translate }} - {{ dailyChallenges.intermediate }}</li>
+            <li class="challenge-item hard">{{ 'home.challengesOfTheDay.hard' | translate }} - {{ dailyChallenges.hard }}</li>
+            <li class="challenge-item extreme">{{ 'home.challengesOfTheDay.extreme' | translate }} - {{ dailyChallenges.extreme }}</li>
+        </ul>
+        <p *ngIf="loading">{{ 'home.challengesOfTheDay.loading' | translate }}</p>
+    </div>
+</section>

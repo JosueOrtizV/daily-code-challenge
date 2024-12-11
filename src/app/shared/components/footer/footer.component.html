@@ -1,0 +1,67 @@
+<footer class="footer pt-120">
+    <div class="container">
+        <div class="row">
+            <!-- Logo and Description -->
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-10">
+                <div class="footer-widget">
+                    <div class="logo">
+                        <h3>
+                            <a [routerLink]="['/home']">
+                                <img src="assets/images/daily-code-icon.svg" alt="Daily Code Icon">
+                                Daily Code Challenge
+                            </a>
+                        </h3>
+                    </div>
+                    <p class="desc">{{ 'footer.description' | translate }}</p>
+                    <ul class="social-links">
+                        <li><a href="https://www.linkedin.com/in/josue-ortizv/" target="_blank"><i class="lni lni-linkedin"></i></a></li>
+                        <li><a href="https://github.com/JosueOrtizV" target="_blank"><img src="assets/images/github-icon-black.svg" alt="Github"></a></li>
+                        <li><a href="https://josueortizv.github.io/portfolio/"><img id="link" src="assets/images/link.svg" alt="portfolio"></a></li>
+                        <li><a [routerLink]="['/home']"><img id="link" src="assets/images/daily-code-icon.svg" alt="portfolio"></a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- About Us Links -->
+            <div class="col-xl-5 col-lg-4 col-md-12 col-sm-12 offset-xl-1">
+                <div class="footer-widget">
+                    <h3>{{ 'footer.aboutUs' | translate }}</h3>
+                    <ul class="links">
+                        <div class="links-list">
+                            <li><a class="page-scroll-active" [routerLink]="['/home']">{{ 'footer.links.home' | translate }}</a></li>
+                            <li><a class="page-scroll-active" [routerLink]="['/daily-challenge']">{{ 'footer.links.dailyChallenge' | translate }}</a></li>
+                            <li><a class="page-scroll-active" [routerLink]="['/more-challenges']">{{ 'footer.links.moreChallenges' | translate }}</a></li>
+                            <li><a class="page-scroll-active" [routerLink]="['/ranking']">{{ 'footer.links.ranking' | translate }}</a></li>
+                            <li><a class="page-scroll-active" [routerLink]="['/about']">{{ 'footer.links.about' | translate }}</a></li>
+                        </div>
+                        <div class="links-list">
+                            <li><a class="page-scroll-active" [routerLink]="['/faq-support']">{{ 'footer.links.faqSupport' | translate }}</a></li>
+                            <li><a class="page-scroll-active" [routerLink]="['/contact']">{{ 'footer.links.contactUs' | translate }}</a></li>
+                            <li><a class="page-scroll-active" [routerLink]="['/donate']">{{ 'footer.links.donate' | translate }}</a></li>
+                            <li><a class="page-scroll-active" [routerLink]="['/privacy-policy']">{{ 'footer.links.privacyPolicy' | translate }}</a></li>
+                            <li><a class="page-scroll-active" [routerLink]="['/terms-&-conditions']">{{ 'footer.links.termsConditions' | translate }}</a></li>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+            <!-- Contact Us -->
+            <div class="col-xl-3 col-lg-4 col-md-6">
+                <div class="footer-widget">
+                    <h3>{{ 'footer.contactUsTitle' | translate }}</h3>
+                    <form (submit)="onSubmit($event)">
+                        <input type="email" name="email" [placeholder]="'footer.contactForm.emailPlaceholder' | translate" required>
+                        <textarea name="message" [placeholder]="'footer.contactForm.messagePlaceholder' | translate" required></textarea>
+                        <div class="message-container" *ngIf="messageVisible">
+                            <p *ngIf="warningMessage" class="warning-message">{{ warningMessage }}</p>
+                        </div>
+                        <button type="submit" class="main-btn btn-hover">{{ 'footer.contactForm.submitButton' | translate }}</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div id="copyright">
+            <p>{{ 'footer.copyright' | translate }}</p>
+        </div>
+    </div>
+</footer>
+
+<app-scroll-top></app-scroll-top>

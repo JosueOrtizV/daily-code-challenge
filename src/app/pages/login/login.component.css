@@ -1,0 +1,147 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: var(--color-background);
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    width: 100%;
+    max-width: 450px;
+    padding: 20px;
+    text-align: center;
+    gap: 1rem;
+    background: var(--color-background);
+}
+
+.info p {
+    margin-top: 10px;
+    color: var(--text-secondary);
+}
+
+.main-btn {
+    padding: 10px 20px;
+    margin: 10px 2px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.logged {
+    color: var(--text-secondary);
+}
+
+h3 {
+    color: var(--text-secondary);
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+#save-btn, #username {
+    margin-top: 10px;
+    border-radius: 8px;
+    height: 35px;
+    padding: 0;   
+}
+
+#username {
+    background: rgb(231, 231, 231);
+    padding: 5px;
+    width: 100%;
+}
+
+#username-display {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+#success {
+    color: #28a745;
+}
+
+.error-message p {
+    color: red; 
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    z-index: 10000; 
+    max-width: 400px;
+}
+
+.modal-content {
+    text-align: center;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1rem;
+    gap: 10px;
+}
+
+.btn-cancel {
+    background: var(--color-secondary);
+}
+
+.btn-confirm {
+    background: var(--text-primary); 
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .card {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .input-group {
+        margin-bottom: 20px;
+    }
+
+
+    .main-btn {
+        padding: 8px 15px;
+    }
+
+    #save-btn, #username {
+        height: 40px;
+    }
+}
+
+@media (max-width: 576px) {
+    .card {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .main-btn {
+        padding: 6px 10px;
+        margin: 5px 1px;
+    }
+
+}

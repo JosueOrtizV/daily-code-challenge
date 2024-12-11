@@ -1,0 +1,120 @@
+.profile-settings {
+    padding: 20px;
+    max-width: 800px; 
+    margin: 0 auto;
+}
+
+.profile-settings h2, .profile-settings h4 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.change-name, .link-accounts {
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.change-name input, .link-accounts button {
+    display: block;
+    width: 50%;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.main-btn {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 1rem;
+}
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    z-index: 1000;
+}
+
+.modal-content {
+    text-align: center;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1rem;
+    gap: 10px;
+}
+
+.btn-cancel {
+    background: var(--color-secondary);
+}
+
+.btn-confirm {
+    background: var(--text-primary);
+}
+
+.error-container {
+    color: red;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.message {
+    color: green;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.warning-message {
+    color: red;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.confirm-message {
+    color: green;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.linked-accounts {
+    padding: 10px 20px;
+    font-size: 1rem;
+}
+
+
+@media (max-width: 768px) {
+    .profile-settings {
+        padding: 10px;
+        max-width: 100%;
+    }
+
+    .change-name input, .link-accounts button {
+        width: 80%;
+    }
+
+}
+
+@media (max-width: 576px) {
+    .profile-settings {
+        padding: 10px;
+        max-width: 100%;
+    }
+
+    .change-name input, .link-accounts button {
+        width: 100%; 
+    }
+
+}

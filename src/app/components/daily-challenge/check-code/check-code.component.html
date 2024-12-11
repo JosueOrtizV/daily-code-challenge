@@ -1,0 +1,38 @@
+<div *ngIf="isCheckingCode" class="loading-spinner">
+    <mat-progress-spinner mode="indeterminate" class="mat-spinner"></mat-progress-spinner>
+    <p>{{ checkingMessage }}</p>
+</div>
+
+<div>
+    <section class="check-code" *ngIf="!completedDisplay">
+        <h2>{{ 'dailyChallenge.checkCode.title' | translate }}</h2>
+        <p class="textarea-placeholder">{{ 'dailyChallenge.checkCode.messages.textareaPlaceholder' | translate }}</p>
+        <p class="textarea-placeholder">{{ 'dailyChallenge.checkCode.messages.scoreMult' | translate }}</p>
+        <div id="checkcode" #checkcode class="editor-container"></div>
+        <div *ngIf="error$ | async as errorMessage" class="error-message">
+            {{ errorMessage }}
+        </div>
+        
+        <p class="checking-message" *ngIf="isCheckingCode">{{ checkingMessage }}</p>
+        <button class="main-btn btn-hover tooltip" id="complete" [disabled]="isCheckingCode" (click)="checkCode()">
+            {{ 'dailyChallenge.checkCode.messages.checkYourCode' | translate }}
+            <span class="tooltiptext">{{ 'dailyChallenge.checkCode.messages.pressToMark' | translate }}</span>
+        </button>
+    </section>
+    
+    <section class="completed" *ngIf="completedDisplay" #completed>
+        <h2>{{ 'dailyChallenge.checkCode.messages.challengeCompleted' | translate }}</h2>
+        <div class="score-display">
+            <p>{{ 'dailyChallenge.checkCode.messages.score' | translate }}: <br><strong>{{ score }}</strong></p>
+            <p>{{ 'dailyChallenge.checkCode.messages.globalScore' | translate }}: <br><strong>{{ globalScore }}</strong></p>
+        </div>
+        <div class="feedback-container">
+            <h3>{{ 'dailyChallenge.checkCode.messages.feedback' | translate }}</h3>
+            <p class="feedback-message">{{ feedback }}</p>
+        </div>
+        <div class="countdown-container">
+            <h3>{{ 'dailyChallenge.checkCode.messages.nextChallenge' | translate }}</h3>
+            <p class="countdown">{{ timeUntilNextChallenge }}</p>
+        </div>
+    </section>
+</div>

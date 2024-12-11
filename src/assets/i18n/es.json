@@ -1,0 +1,395 @@
+{
+    "header": {
+        "home": "Inicio",
+        "dailyChallenge": "Desafío Diario",
+        "moreChallenges": "Más Desafíos",
+        "ranking": "Clasificación",
+        "about": "Acerca de",
+        "faqSupport": "FAQ-Soporte",
+        "profile": "Perfil",
+        "login": "Iniciar Sesión",
+        "privacyPolicy": "Política de Privacidad",
+        "termsConditions": "Términos y Condiciones",
+        "contactUs": "Contáctanos",
+        "donate": "Donar"
+    },
+    
+    "home": {
+        "title": "Bienvenido a la Página Principal",
+        "description": "Esta es la descripción de la página principal.",
+        "welcome": {
+            "loggedIn": "¡Bienvenido, {{username}}!",
+            "notLoggedIn": "¡Bienvenido al Desafío Diario de Programación!",
+            "description": "Mejora tus habilidades de programación con desafíos diarios de codificación. Compite con otros desarrolladores, aprende nuevos algoritmos y estructuras de datos, y sube en la clasificación para convertirte en un profesional de la programación. Únete a nuestra comunidad y comienza tu viaje de codificación hoy mismo.",
+            "startChallenge": "¡Comienza tu desafío ahora!"
+        },
+        
+        "features": {
+            "title": "Características Clave",
+            "dailyChallenges": {
+                "title": "Desafíos Diarios",
+                "description": "Obtén un nuevo problema de codificación cada día."
+            },
+            "moreChallenges": {
+                "title": "Más Desafíos",
+                "description": "Acepta desafíos personalizados para mejorar tus habilidades de codificación. ¡Descubre de lo que eres capaz!"
+            },
+            "leaderboard": {
+                "title": "Tabla de Clasificación",
+                "description": "Mira cómo te comparas con otros programadores."
+            },
+            "aboutUs": {
+                "title": "Sobre Nosotros",
+                "description": "Aprende más sobre nuestra misión y equipo."
+            },
+            "faqSupport": {
+                "title": "FAQ y Soporte",
+                "description": "Encuentra respuestas a preguntas comunes y obtén ayuda."
+            }
+        },
+        
+        "challengesOfTheDay": {
+            "title": "Desafíos del Día",
+            "easy": "Fácil",
+            "intermediate": "Intermedio",
+            "hard": "Difícil",
+            "extreme": "Extremo",
+            "loading": "Cargando desafíos..."
+        },
+        "newsUpdates": {
+            "title": "Noticias y Actualizaciones",
+            "newsItem1": {
+                "title": "¡Nuevo!",
+                "description": "Desafíos temáticos festivos para la temporada navideña. ¡Entra en el espíritu y codifica tu camino hacia un poco de alegría navideña!"
+            },
+            "newsItem2": {
+                "title": "¡Actualización!",
+                "description": "Temática festiva para la aplicación web y la extensión. ¡Entra en el espíritu y codifica tu camino hacia un poco de alegría navideña!"
+            }
+        },
+        "supportUs": {
+            "title": "Apóyanos",
+            "description": "Ayúdanos a mantener el Desafío Diario de Programación en funcionamiento y en crecimiento. Tu donación nos ayudará a crear nuevos desafíos, mejorar la plataforma y apoyar a nuestra comunidad.",
+            "buttonText": "Dona Ahora"
+        },
+        "contact": {
+            "title": "Contáctanos",
+            "description": "¿Tienes preguntas o comentarios? Contacta a nuestro equipo de soporte.",
+            "buttonText": "Contáctanos"
+        }
+    },
+    
+    "dailyChallenge": {
+        "title": "Desafío Diario",
+        "description": "¡Empieza tu desafío de programación hoy!",
+        "checkCode": {
+            "title": "Revisa tu código una vez que lo hayas completado",
+            "messages": {
+                "maxCharacters": "El límite máximo de caracteres de {{maxCharacters}} ha sido alcanzado.",
+                "enterValidCode": "Por favor, introduce un código válido",
+                "checkingCode": "Revisando tu código...",
+                "serviceOverloaded": "El servicio está actualmente sobrecargado. Por favor, inténtalo de nuevo más tarde.",
+                "errorCheckingCode": "Error revisando el código: {{errorMessage}}",
+                "warningMessage": "Mensaje de Advertencia",
+                "checkingMessage": "Mensaje de Revisión",
+                "textareaPlaceholder": "Pega tu código aquí para revisarlo y obtener retroalimentación y puntuación. Tu ejercicio se marcará como completado después de presionar el botón de abajo.",
+                "checkYourCode": "Revisa Tu Código",
+                "pressToMark": "Presiona para marcar tu ejercicio como completado",
+                "challengeCompleted": "¡Desafío Completado!",
+                "score": "Puntuación",
+                "globalScore": "Puntuación Global",
+                "feedback": "Retroalimentación",
+                "scoreMult": "Multiplicador de puntuación:\n- Fácil: 1.0\n- Intermedio: 1.5\n- Difícil: 2.0\n- Extremo: 2.5\nLa puntuación final se normalizará de 0 a 10.",
+                "nextChallenge": "El proximo desafio estara disponible en: "
+            }
+        },
+        "username": {
+            "enterUsername": "Introduce un nombre de usuario válido o <a href='/login'>inicia Sesión</a>",
+            "placeholder": "Introduce un nombre de usuario",
+            "save": "Guardar",
+            "tooltip": "Puedes cambiar tu nombre de usuario más tarde en tu perfil",
+            "usernameLabel": "Nombre de usuario:",
+            "usernameInUse": "* El nombre de usuario {{username}} ya está en uso",
+            "usernameRules": "* El nombre de usuario debe tener entre 4 y 16 caracteres y solo puede contener letras, números, _ , . , -",
+            "savedMessage": "Tu nombre de usuario ha sido guardado"
+        },
+        "messages": {
+            "validUsernameOrLogin": "Introduce un nombre de usuario válido o inicia sesión para ver tu desafío diario.",
+            "loadingChallenge": "Cargando desafío diario...",
+            "errorGettingChallenge": "Error al obtener el desafío diario, por favor intenta nuevamente más tarde",
+            "showHints": "Mostrar Pistas",
+            "hideHints": "Ocultar Pistas",
+            "copiedToClipboard": "Copiado al portapapeles",
+            "clickToCopy": "Haz clic para copiar",
+            "placeholder": "Mejora tus habilidades de programación con un desafío diario. Haz clic en 'Obtener Desafío'."
+        },
+        "exerciseTitle": "Ejercicio",
+        "examplesTitle": "Ejemplos",
+        "difficultyLabel": "Dificultad:",
+        "difficultyOptions": {
+            "easy": "Fácil",
+            "intermediate": "Intermedio",
+            "hard": "Difícil",
+            "extreme": "Experto"
+        },
+        "challengeFrom": "Desafío del",
+        "copyButton": "Copiar",
+        "getChallengeButton": "Obtener Desafío",
+        "tooltip": {
+            "copy": "¡Haz clic para copiar!",
+            "getChallenge": "Obtén tu desafío diario"
+        }
+    },
+    
+    "moreChallenges": {
+        "title": "Más Desafíos",
+        "description": "¡Explora más desafíos de programación y sigue mejorando!",
+        "messages": {
+            "validUsernameOrLogin": "Por favor, introduce un nombre de usuario válido o inicia sesión para ver más desafíos.",
+            "loadingChallenge": "Cargando más desafíos...",
+            "errorGettingChallenge": "Error al obtener más desafíos, por favor intenta nuevamente más tarde",
+            "copiedToClipboard": "Copiado al portapapeles",
+            "clickToCopy": "Haz clic para copiar",
+            "placeholder": "Explora desafíos adicionales de programación. Haz clic en 'Obtener Desafío'."
+        },
+        "exerciseTitle": "Ejercicio",
+        "difficultyLabel": "Dificultad:",
+        "difficultyOptions": {
+            "easy": "Fácil",
+            "intermediate": "Intermedio",
+            "hard": "Difícil",
+            "extreme": "Experto"
+        },
+        "getChallengeButton": "Obtener Desafío",
+        "tooltip": {
+            "copy": "¡Haz clic para copiar!",
+            "getChallenge": "Obtén tu desafío adicional"
+        }
+    },
+    
+    "leaderboard": {
+        "title": "Clasificación",
+        "filters": {
+            "daily": "Diarios",
+            "weekly": "Semanales",
+            "monthly": "Mensuales",
+            "global": "Globales"
+        },
+        "username": "Nombre de usuario",
+        "points": "Puntos"
+    },
+    
+    "about": {
+        "title": "Sobre Nosotros",
+        "description": "Conoce más sobre nuestra misión, visión y el equipo detrás de Daily Code Challenge.",
+        "teamTitle": "Nuestro Equipo",
+        "missionTitle": "Nuestra Misión",
+        "missionDescription": "En Daily Code Challenge, nuestra misión es proporcionar a los programadores problemas interesantes y desafiantes que mejoren sus habilidades diariamente.",
+        "valuesTitle": "Nuestros Valores",
+        "role": "Desarrollador",
+        "values": [
+            "Compromiso con la Excelencia",
+            "Aprendizaje Continuo",
+            "Comunidad y Colaboración",
+            "Innovación",
+            "Integridad"
+        ]
+    },
+    
+    
+    "profile": {
+        "progress": {
+            "title": "Tu Progreso",
+            "subtitle": "Aquí hay una instantánea de tus logros y actividades.",
+            "weeklyScore": "Puntaje Semanal",
+            "monthlyScore": "Puntaje Mensual",
+            "globalScore": "Puntaje Global",
+            "recentActivity": "Actividad Reciente",
+            "notCompleted": "¡No has completado el desafío de hoy!",
+            "exploreMore": "Explorar Más Desafíos",
+            "tryMore": "Intentar Más Desafíos",
+            "todaysChallenge": "¡El Desafío de Hoy te Espera!",
+            "startChallenge": "Comenzar Desafío Diario"
+        },
+        "header": "¡Bienvenido, {{ username }}!",
+        "subtitle": "Administra tu cuenta y visualiza tu progreso",
+        "progress-title": "Progreso",
+        "settings": "Configuración del Perfil",
+        "logout": "Cerrar Sesión",
+        "confirmLogout": "¿Estás seguro de que quieres cerrar sesión?",
+        "cancel": "Cancelar",
+        
+        "profile-settings": {
+            "changeUsername": "Cambia tu nombre",
+            "newUsername": "Nuevo nombre de usuario",
+            "linkAccount": "Vincula tus cuentas",
+            "googleAccount": "Vincular cuenta de Google",
+            "githubAccount": "Vincular cuenta de GitHub",
+            "googleLinkedAccount": "Cuenta de Google vinculada",
+            "githubLinkedAccount": "Cuenta de GitHub vinculada",
+            "confirmChangeUsername": "Confirmar cambio de nombre",
+            "confirm": "Confirmar",
+            "change": "Cambiar",
+            "usernameInUse": "* El nombre de usuario {{username}} ya está en uso",
+            "usernameRules": "* El nombre de usuario debe tener entre 4 y 16 caracteres y solo puede contener letras, números, _ , . , -",
+            "usernameRequired": "Se requiere el nombre de usuario",
+            "unknownError": "Error desconocido",
+            "delayError": " días restantes para poder cambiar tu nombre de usuario",
+            "savedMessage": "Tu nombre de usuario ha sido guardado",
+            "googleAccountLinked": "Cuenta de Google vinculada con éxito",
+            "githubAccountLinked": "Cuenta de GitHub vinculada con éxito",
+            "credentialAlreadyInUse": "La credencial ya está en uso por otra cuenta",
+            "TOKEN_REQUIRED": "Se requiere el token",
+            "INVALID_TOKEN": "Token inválido",
+            "USER_NOT_FOUND": "Usuario no encontrado",
+            "DAYS_REMAINING": "días restantes para poder cambiar tu nombre de usuario",
+            "USERNAME_UPDATED": "Nombre de usuario {{oldUsername}} actualizado a {{newUsername}}",
+            "USER_NOT_LOGGED_IN": "El usuario no ha iniciado sesión"
+        }
+    },
+    "login": {
+        "welcome": "¡Bienvenido!",
+        "start_adventure": "¡Comienza tu aventura de codificación con nosotros!",
+        "login_title": "Iniciar sesión",
+        "username_label": "Tu nombre de usuario",
+        "username_placeholder": "Ingresa un nombre de usuario",
+        "login_button": "Iniciar sesión",
+        "login_tooltip": "Puedes cambiar tu nombre de usuario más adelante en tu perfil",
+        "login_with": "Iniciar sesión con",
+        "confirmLogin": "Confirmar inicio de sesión",
+        "cancel": "Cancelar",
+        "confirm": "Confirmar",
+        "google_button": "Iniciar sesión con Google",
+        "github_button": "Iniciar sesión con GitHub",
+        "success_message": "Has iniciado sesión con éxito.",
+        "your_username": "Tu nombre de usuario es:",
+        "start_challenge": "¡Comienza tu desafío diario!",
+        "error_anonymous_login": "Error al iniciar sesión anónimamente. Inténtalo de nuevo.",
+        "error_google_login": "Error al iniciar sesión con Google. Inténtalo de nuevo.",
+        "error_github_login": "Error durante el inicio de sesión con GitHub. Inténtalo de nuevo.",
+        "error_username_taken": "* Nombre de usuario {{username}} ya está en uso.",
+        "error_invalid_username": "* El nombre de usuario debe tener entre 4 y 16 caracteres y solo puede contener letras, números, _ , . , -",
+        "error_username_required": "El nombre de usuario es obligatorio.",
+        "error_invalid_username_for_uid": "El nombre de usuario no es válido para el UID actual.",
+        "redirect_message": "Serás redirigido en {{ seconds }} segundos."
+    },
+    
+    "faq": {
+        "title": "Preguntas Frecuentes",
+        "question1": "¿Qué es el Daily Code Challenge?",
+        "answer1": "El Daily Code Challenge es una plataforma donde puedes practicar problemas de codificación todos los días para mejorar tus habilidades de programación.",
+        "question2": "¿Cómo participo?",
+        "answer2": "Para participar, simplemente inicia sesión y comienza a resolver los desafíos diarios. Puedes enviar tus soluciones y ver cómo te posicionas frente a otros participantes."
+    },
+    
+    "contact": {
+        "title": "Contáctenos",
+        "description": "Si tiene alguna pregunta o necesita más asistencia, por favor contáctenos utilizando el formulario a continuación.",
+        "username": "Nombre de usuario",
+        "email": "Correo Electrónico",
+        "subject": "Asunto",
+        "message": "Mensaje",
+        "usernamePlaceholder": "Ingrese su nombre de usuario",
+        "emailPlaceholder": "Ingrese su dirección de correo electrónico",
+        "subjectPlaceholder": "Ingrese el asunto",
+        "messagePlaceholder": "Ingrese su mensaje",
+        "submitButton": "Enviar",
+        "loginWarning": "Por favor, inicie sesión para enviar un mensaje.",
+        "successMessage": "Mensaje enviado con éxito.",
+        "errorMessage": "Error al enviar el mensaje. Por favor, inténtelo de nuevo más tarde.",
+        "socialLinks": "Síguenos"
+    },
+    
+    "donate": {
+        "title": "Apóyanos",
+        "description": "Si disfrutas usando nuestra plataforma y deseas apoyarnos, puedes hacer una donación a través de PayPal.",
+        "button": "Donar a través de PayPal",
+        "socialLinks": "Síguenos"
+    },
+    
+    "privacyPolicy": {
+        "title": "Política de Privacidad",
+        "introductionTitle": "Introducción",
+        "introduction": "Bienvenido a nuestra Política de Privacidad. Tu privacidad es extremadamente importante para nosotros. Valoramos tu confianza y estamos comprometidos a proteger tus datos personales.",
+        "dataCollectionTitle": "Recopilación de Datos",
+        "dataCollection": "Recopilamos varios tipos de información en relación con los servicios que ofrecemos, incluyendo:",
+        "dataCollectionItem1": "Información personal de identificación (Nombre, dirección de correo electrónico, etc.)",
+        "dataCollectionItem2": "Datos de uso (Páginas visitadas, tiempo pasado en el sitio, etc.)",
+        "dataCollectionItem3": "Datos de cookies y tecnología de seguimiento",
+        "dataUseTitle": "Uso de Datos",
+        "dataUse": "Usamos los datos recopilados para varios propósitos, incluyendo:",
+        "dataUseItem1": "Para proporcionar y mantener nuestro servicio",
+        "dataUseItem2": "Para notificarte sobre cambios en nuestro servicio",
+        "dataUseItem3": "Para proporcionar soporte al cliente",
+        "dataSharingTitle": "Compartición de Datos",
+        "dataSharing": "Podemos compartir tu información en las siguientes situaciones:",
+        "dataSharingItem1": "Con proveedores de servicios para realizar tareas relacionadas con el servicio",
+        "dataSharingItem2": "Para cumplir con obligaciones legales",
+        "dataSharingItem3": "Con tu consentimiento",
+        "dataSecurityTitle": "Seguridad de Datos",
+        "dataSecurity": "Priorizamos la seguridad de tus datos y usamos medios comercialmente aceptables para protegerlos. Sin embargo, ningún método de transmisión por internet es 100% seguro.",
+        "cookiesTitle": "Cookies",
+        "cookies": "Usamos cookies y tecnologías de seguimiento similares para rastrear la actividad en nuestro servicio y mantener cierta información.",
+        "yourRightsTitle": "Tus Derechos",
+        "yourRights": "Tienes el derecho de acceder, actualizar o eliminar la información que tenemos sobre ti. Por favor, contáctanos para ejercer estos derechos.",
+        "contactTitle": "Contáctanos",
+        "contact": "Si tienes alguna pregunta o inquietud sobre nuestra política de privacidad, por favor contáctanos a",
+        "contactEmail": "dailycodechallenge365@gmail.com"
+    },
+    
+    "termsConditions": {
+        "title": "Términos y Condiciones",
+        "introductionTitle": "Introducción",
+        "introduction": "Bienvenido a nuestros Términos y Condiciones. Al usar nuestros servicios, aceptas cumplir con y estar sujeto a los siguientes términos y condiciones.",
+        "useTitle": "Uso de Nuestros Servicios",
+        "use": "Aceptas usar nuestros servicios solo para fines legales. Aceptas no realizar ninguna acción que pueda comprometer la seguridad del sitio, hacer que el sitio sea inaccesible para otros, o causar daños al sitio o su contenido.",
+        "useItem1": "No debes hacer un uso indebido de nuestros servicios.",
+        "useItem2": "No debes intentar obtener acceso no autorizado a nuestros servicios.",
+        "useItem3": "No debes usar nuestros servicios para dañar a otros.",
+        "userResponsibilitiesTitle": "Responsabilidades del Usuario",
+        "userResponsibilities": "Como usuario de nuestros servicios, eres responsable de cualquier actividad que ocurra a través de tu cuenta.",
+        "userResponsibilitiesItem1": "Eres responsable de mantener la confidencialidad de la información de tu cuenta.",
+        "userResponsibilitiesItem2": "Eres responsable de todas las actividades que ocurran bajo tu cuenta.",
+        "userResponsibilitiesItem3": "Aceptas notificarnos de inmediato sobre cualquier uso no autorizado de tu cuenta.",
+        "intellectualPropertyTitle": "Propiedad Intelectual",
+        "intellectualProperty": "Todo el contenido incluido en nuestros servicios, como textos, gráficos, logotipos e imágenes, es nuestra propiedad o la propiedad de nuestros licenciantes y está protegido por derechos de autor y otras leyes.",
+        "terminationTitle": "Terminación",
+        "termination": "Podemos terminar o suspender tu acceso a nuestros servicios de inmediato, sin previo aviso, si incumples estos términos y condiciones.",
+        "disclaimerTitle": "Descargo de Responsabilidad",
+        "disclaimer": "Nuestros servicios se proporcionan en una base 'tal cual'. No hacemos garantías ni declaraciones sobre la precisión o integridad de nuestros servicios.",
+        "changesTitle": "Cambios a Estos Términos",
+        "changes": "Nos reservamos el derecho de modificar estos términos y condiciones en cualquier momento. Cualquier cambio será efectivo inmediatamente después de su publicación.",
+        "contactTitle": "Contáctanos",
+        "contact": "Si tienes alguna pregunta sobre estos términos y condiciones, por favor contáctanos a"
+    },
+    
+    "footer": {
+        "logoTitle": "Desafío Diario de Código",
+        "description": "Desafío Diario de Código es tu rutina diaria para convertirte en un mejor programador. ¡Supera desafíos, sube en la clasificación y únete a nuestra comunidad de desarrolladores!",
+        "aboutUs": "Sobre Nosotros",
+        "links": {
+            "home": "Inicio",
+            "dailyChallenge": "Desafío Diario",
+            "moreChallenges": "Más Desafíos",
+            "ranking": "Clasificación",
+            "about": "Acerca de",
+            "faqSupport": "FAQ-Soporte",
+            "privacyPolicy": "Política de Privacidad",
+            "termsConditions": "Términos y Condiciones",
+            "contactUs": "Contáctanos",
+            "donate": "Donate"
+        },
+        "contactUsTitle": "Contáctanos",
+        "contactForm": {
+            "emailPlaceholder": "Tu Correo Electrónico",
+            "messagePlaceholder": "Tu Mensaje",
+            "submitButton": "Enviar Mensaje",
+            "loginWarning": "Por favor, inicia sesión para usar esta función.",
+            "successMessage": "Mensaje enviado exitosamente",
+            "errorMessage": "Error al enviar el mensaje"
+        },
+        "copyright": "© 2024 Josué Ortiz"
+    }
+    
+    
+}

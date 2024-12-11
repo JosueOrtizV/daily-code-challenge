@@ -1,0 +1,132 @@
+.container {
+    max-width: 1200px; 
+    margin: 0 auto;
+    padding: 0 15px; 
+}
+
+.welcome-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #fff;
+}
+
+.welcome-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.welcome-header .welcome-subtitle {
+    font-size: 1.2rem;
+}
+
+.user-stats {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    margin-bottom: 30px;
+    gap: 1rem; 
+}
+
+.stat-item {
+    background: white;
+    border-left: 5px solid var(--color-primary);
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s;
+    flex-grow: 1;
+    min-width: 300px;
+}
+
+.stat-item:hover {
+    transform: translateY(-5px);
+}
+
+.stat-item h3 {
+    color: var(--color-primary);
+    margin-bottom: 10px;
+}
+
+.stat-item p {
+    color: var(--text-secondary);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.recent-activity {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.recent-activity h3 {
+    font-size: 2rem;
+    color: var(--color-primary);
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.recent-activity ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.recent-activity li {
+    background: white;
+    border-left: 5px solid var(--color-secondary);
+    margin-bottom: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    color: var(--text-secondary);
+}
+
+
+.more-challenges, .daily-challenge {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.more-challenges h3, .daily-challenge h3 {
+    font-size: 2rem;
+    color: var(--color-primary);
+    margin-bottom: 15px;
+}
+
+.main-btn {
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 1.2rem;
+    color: var(--text-white);
+    background: var(--color-primary);
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s;
+}
+
+.main-btn:hover {
+    background: var(--color-secondary);
+    transform: translateY(-3px);
+}
+
+
+@media (max-width: 768px) {
+    .user-stats {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .stat-item {
+        width: 80%;
+        min-width: 100%;
+    }
+    
+    .recent-activity h3, .more-challenges h3, .daily-challenge h3 {
+        font-size: 1.5rem;
+    }
+    
+    .main-btn {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+}

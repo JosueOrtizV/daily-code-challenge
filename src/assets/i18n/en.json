@@ -1,0 +1,387 @@
+{
+    "header": {
+        "home": "Home",
+        "dailyChallenge": "Daily Challenge",
+        "moreChallenges": "More Challenges",
+        "ranking": "Ranking",
+        "about": "About",
+        "faqSupport": "FAQ-Support",
+        "profile": "Profile",
+        "login": "Login",
+        "privacyPolicy": "Privacy Policy",
+        "termsConditions": "Terms & Conditions",
+        "contactUs": "Contact Us",
+        "donate": "Donate"
+    },
+    "home": {
+        "welcome": {
+            "loggedIn": "Welcome, {{username}}!",
+            "notLoggedIn": "Welcome to the Daily Coding Challenge!",
+            "description": "Level up your programming skills with daily coding challenges. Compete with other developers, learn new algorithms and data structures, and climb the leaderboard to become a coding pro. Join our community and start your coding journey today!",
+            "startChallenge": "Start your challenge now!"
+        },
+        
+        "features": {
+            "title": "Key Features",
+            "dailyChallenges": {
+                "title": "Daily Challenges",
+                "description": "Get a new coding problem every day."
+            },
+            "moreChallenges": {
+                "title": "More Challenges",
+                "description": "Take on personalized challenges to improve your coding skills. Discover what you're capable of!"
+            },
+            "leaderboard": {
+                "title": "Leaderboard",
+                "description": "See how you stack up against other coders."
+            },
+            "aboutUs": {
+                "title": "About Us",
+                "description": "Learn more about our mission and team."
+            },
+            "faqSupport": {
+                "title": "FAQ & Support",
+                "description": "Find answers to common questions and get help."
+            }
+        },
+        
+        "challengesOfTheDay": {
+            "title": "Challenges of the Day",
+            "easy": "Easy",
+            "intermediate": "Intermediate",
+            "hard": "Hard",
+            "extreme": "Extreme",
+            "loading": "Loading challenges..."
+        },
+        "newsUpdates": {
+            "title": "News & Updates",
+            "newsItem1": {
+                "title": "New!",
+                "description": "Festive themed challenges for the holiday season. Get in the spirit and code your way to some holiday cheer!"
+            },
+            "newsItem2": {
+                "title": "Update!",
+                "description": "Festive themed for the web app & extension. Get in the spirit and code your way to some holiday cheer!"
+            }
+        },
+        "supportUs": {
+            "title": "Support Us",
+            "description": "Help us keep the Daily Coding Challenge running and growing. Your donation will help us create new challenges, improve the platform, and support our community.",
+            "buttonText": "Donate Now"
+        },
+        "contact": {
+            "title": "Contact Us",
+            "description": "Have questions or feedback? Contact our support team.",
+            "buttonText": "Contact Us"
+        }
+    },
+    "dailyChallenge": {
+        "title": "Daily Challenge",
+        "description": "Start your coding challenge today!",
+        "checkCode": {
+            "title": "Check your code once you have completed it",
+            "messages": {
+                "maxCharacters": "The maximum character limit of {{maxCharacters}} has been reached.",
+                "enterValidCode": "Please enter valid code",
+                "checkingCode": "Checking your code...",
+                "serviceOverloaded": "The service is currently overloaded. Please try again later.",
+                "errorCheckingCode": "Error checking code: {{errorMessage}}",
+                "warningMessage": "Warning Message",
+                "checkingMessage": "Checking Message",
+                "textareaPlaceholder": "Paste your code here to check it & get feedback & score. Your exercise will be marked as completed after you press the button below.",
+                "checkYourCode": "Check Your Code",
+                "pressToMark": "Press to mark your exercise as completed",
+                "challengeCompleted": "Challenge Completed!",
+                "score": "Score",
+                "globalScore": "Global Score",
+                "feedback": "Feedback",
+                "scoreMult": "Score multiplier:\n- Easy: 1.0\n- Intermediate: 1.5\n- Hard: 2.0\n- Extreme: 2.5\nFinal score will be normalized from 0 to 10.",
+                "nextChallenge": "Next challenge will be available in:"
+            }
+        },
+        "username": {
+            "enterUsername": "Enter a valid username or <a href='/login'>login</a>",
+            "placeholder": "Enter a username",
+            "save": "Save",
+            "tooltip": "You can change your username later in your profile",
+            "usernameLabel": "Username:",
+            "usernameInUse": "* Username {{username}} already in use",
+            "usernameRules": "* Username must be between 4-16 characters and can only contain letters, numbers, _ , . , -",
+            "savedMessage": "Your username has been saved"
+        },
+        "messages": {
+            "validUsernameOrLogin": "Please introduce a valid username or login to see your daily challenge.",
+            "loadingChallenge": "Loading daily challenge...",
+            "errorGettingChallenge": "Error getting daily code challenge, please try again later",
+            "showHints": "Show Hints",
+            "hideHints": "Hide Hints",
+            "copiedToClipboard": "Copied to clipboard",
+            "clickToCopy": "Click to copy",
+            "placeholder": "Level up your coding abilities with a daily challenge. Click 'Get Challenge'."
+        },
+        "exerciseTitle": "Exercise",
+        "examplesTitle": "Examples",
+        "difficultyLabel": "Difficulty:",
+        "difficultyOptions": {
+            "easy": "Easy",
+            "intermediate": "Intermediate",
+            "hard": "Hard",
+            "extreme": "Expert"
+        },
+        "challengeFrom": "Challenge from",
+        "copyButton": "Copy",
+        "getChallengeButton": "Get Challenge",
+        "tooltip": {
+            "copy": "Click to copy!",
+            "getChallenge": "Get your daily challenge"
+        }
+    },
+    "moreChallenges": {
+        "title": "More Challenges",
+        "description": "Explore more coding challenges and keep improving!",
+        "messages": {
+            "validUsernameOrLogin": "Please enter a valid username or log in to view more challenges.",
+            "loadingChallenge": "Loading more challenges...",
+            "errorGettingChallenge": "Error getting more challenges, please try again later",
+            "copiedToClipboard": "Copied to clipboard",
+            "clickToCopy": "Click to copy",
+            "placeholder": "Explore additional coding challenges. Click 'Get Challenge'."
+        },
+        "exerciseTitle": "Exercise",
+        "difficultyLabel": "Difficulty:",
+        "difficultyOptions": {
+            "easy": "Easy",
+            "intermediate": "Intermediate",
+            "hard": "Hard",
+            "extreme": "Expert"
+        },
+        "getChallengeButton": "Get Challenge",
+        "tooltip": {
+            "copy": "Click to copy!",
+            "getChallenge": "Get your additional challenge"
+        }
+    },
+    "leaderboard": {
+        "title": "Leaderboard",
+        "filters": {
+            "daily": "Daily",
+            "weekly": "Weekly",
+            "monthly": "Monthly",
+            "global": "Global"
+        },
+        "username": "Username",
+        "points": "Points"
+    },
+    "about": {
+        "title": "About Us",
+        "description": "Learn more about our mission, vision, and the team behind Daily Code Challenge.",
+        "teamTitle": "Our Team",
+        "missionTitle": "Our Mission",
+        "missionDescription": "At Daily Code Challenge, our mission is to provide programmers with engaging and challenging problems that enhance their skills daily.",
+        "valuesTitle": "Our Values",
+        "role": "Developer",
+        "values": [
+            "Commitment to Excellence",
+            "Continuous Learning",
+            "Community and Collaboration",
+            "Innovation",
+            "Integrity"
+        ]
+    },
+    "profile": {
+        "progress": {
+            "title": "Your Progress",
+            "subtitle": "Here’s a snapshot of your achievements and activities.",
+            "weeklyScore": "Weekly Score",
+            "monthlyScore": "Monthly Score",
+            "globalScore": "Global Score",
+            "recentActivity": "Recent Activity",
+            "notCompleted": "You haven't completed today's challenge yet!",
+            "exploreMore": "Explore More Challenges",
+            "tryMore": "Try More Challenges",
+            "todaysChallenge": "Today's Challenge Awaits!",
+            "startChallenge": "Start Daily Challenge"
+        },
+        "header": "Welcome, {{ username }}!",
+        "subtitle": "Manage your account and view your progress",
+        "progress-title": "Progress",
+        "settings": "Profile Settings",
+        "logout": "Logout",
+        "confirmLogout": "Are you sure you want to logout?",
+        "cancel": "Cancel",
+        
+        "profile-settings": {
+            "changeUsername": "Change Your Name",
+            "newUsername": "New Username",
+            "linkAccount": "Link Your Accounts",
+            "googleAccount": "Link Google Account",
+            "githubAccount": "Link GitHub Account",
+            "googleLinkedAccount": "Linked Google Account",
+            "githubLinkedAccount": "Linked GitHub Account",
+            "confirmChangeUsername": "Confirm name change",
+            "confirm": "Confirm",
+            "change": "Change",
+            "usernameInUse": "* Username {{username}} already in use",
+            "usernameRules": "* Username must be between 4-16 characters and can only contain letters, numbers, _ , . , -",
+            "usernameRequired": "Username is required",
+            "unknownError": "Unknown error",
+            "delayError": " days remaining to be able to change your username",
+            "savedMessage": "Your username has been saved",
+            "googleAccountLinked": "Google account linked successfully",
+            "githubAccountLinked": "GitHub account linked successfully",
+            "credentialAlreadyInUse": "The credential is already in use by another account",
+            "TOKEN_REQUIRED": "Token is required",
+            "INVALID_TOKEN": "Invalid token",
+            "USER_NOT_FOUND": "User not found",
+            "DAYS_REMAINING": "days remaining to be able to change your username",
+            "USERNAME_UPDATED": "Username {{oldUsername}} updated to {{newUsername}}",
+            "USER_NOT_LOGGED_IN": "User is not logged in"
+        }
+    },
+    
+    "login": {
+        "welcome": "Welcome!",
+        "start_adventure": "Start your coding adventure with us!",
+        "login_title": "Log in",
+        "username_label": "Your username",
+        "username_placeholder": "Enter a username",
+        "login_button": "Log in",
+        "login_tooltip": "You can change your username later on your profile",
+        "login_with": "Log in with",
+        "confirmLogin": "Confirm Log In",
+        "cancel": "Cancel",
+        "confirm": "Confirm",
+        "google_button": "Sign In with Google",
+        "github_button": "Sign In with GitHub",
+        "success_message": "You have successfully logged in.",
+        "your_username": "Your username is:",
+        "start_challenge": "Start your daily challenge!",
+        "error_anonymous_login": "Error during anonymous login. Please try again.",
+        "error_google_login": "Error during Google login. Please try again.",
+        "error_github_login": "Error during GitHub login. Please try again.",
+        "error_username_taken": "* Username {{username}} already in use.",
+        "error_invalid_username": "* Username must be between 4-16 characters and can only contain letters, numbers, _ , . , -",
+        "error_username_required": "Username is required.",
+        "error_invalid_username_for_uid": "Username is invalid for the current UID.",
+        "redirect_message": "You will be redirected in {{ seconds }} seconds."
+    },
+    
+    "faq": {
+        "title": "Frequently Asked Questions",
+        "question1": "What is the Daily Code Challenge?",
+        "answer1": "The Daily Code Challenge is a platform where you can practice coding problems every day to improve your programming skills.",
+        "question2": "How do I participate?",
+        "answer2": "To participate, simply log in and start solving the daily challenges. You can submit your solutions and see how you rank against other participants."
+    },
+    
+    "contact": {
+        "title": "Contact Us",
+        "description": "If you have any questions or need further assistance, please feel free to contact us using the form below.",
+        "username": "Username",
+        "email": "Email",
+        "subject": "Subject",
+        "message": "Message",
+        "usernamePlaceholder": "Enter your username",
+        "emailPlaceholder": "Enter your email address",
+        "subjectPlaceholder": "Enter the subject",
+        "messagePlaceholder": "Enter your message",
+        "submitButton": "Submit",
+        "loginWarning": "Please log in to send a message.",
+        "successMessage": "Message sent successfully.",
+        "errorMessage": "Error sending message. Please try again later.",
+        "socialLinks": "Follow Us"
+    },
+    
+    "donate": {
+        "title": "Support Us",
+        "description": "If you enjoy using our platform and would like to support us, you can make a donation via PayPal.",
+        "button": "Donate via PayPal",
+        "socialLinks": "Follow Us"
+    },
+    
+    "privacyPolicy": {
+        "title": "Privacy Policy",
+        "introductionTitle": "Introduction",
+        "introduction": "Welcome to our Privacy Policy. Your privacy is critically important to us. We value your trust and are committed to protecting your personal data.",
+        "dataCollectionTitle": "Data Collection",
+        "dataCollection": "We collect various types of information in connection with the services we provide, including:",
+        "dataCollectionItem1": "Personal identification information (Name, email address, etc.)",
+        "dataCollectionItem2": "Usage data (Pages visited, time spent on the site, etc.)",
+        "dataCollectionItem3": "Cookies and tracking technology data",
+        "dataUseTitle": "Data Use",
+        "dataUse": "We use the collected data for various purposes, including:",
+        "dataUseItem1": "To provide and maintain our service",
+        "dataUseItem2": "To notify you about changes to our service",
+        "dataUseItem3": "To provide customer support",
+        "dataSharingTitle": "Data Sharing",
+        "dataSharing": "We may share your information in the following situations:",
+        "dataSharingItem1": "With service providers to perform service-related tasks",
+        "dataSharingItem2": "To comply with legal obligations",
+        "dataSharingItem3": "With your consent",
+        "dataSecurityTitle": "Data Security",
+        "dataSecurity": "We prioritize the security of your data and use commercially acceptable means to protect it. However, no method of transmission over the internet is 100% secure.",
+        "cookiesTitle": "Cookies",
+        "cookies": "We use cookies and similar tracking technologies to track the activity on our service and hold certain information.",
+        "yourRightsTitle": "Your Rights",
+        "yourRights": "You have the right to access, update, or delete the information we have on you. Please contact us to exercise these rights.",
+        "contactTitle": "Contact Us",
+        "contact": "If you have any questions or concerns about our privacy policy, please contact us at",
+        "contactEmail": "dailycodechallenge365@gmail.com"
+    },
+    
+    "termsConditions": {
+        "title": "Terms and Conditions",
+        "introductionTitle": "Introduction",
+        "introduction": "Welcome to our Terms and Conditions. By using our services, you agree to comply with and be bound by the following terms and conditions.",
+        "useTitle": "Use of Our Services",
+        "use": "You agree to use our services only for lawful purposes. You agree not to take any action that might compromise the security of the site, render the site inaccessible to others, or otherwise cause damage to the site or its content.",
+        "useItem1": "You must not misuse our services.",
+        "useItem2": "You must not attempt to gain unauthorized access to our services.",
+        "useItem3": "You must not use our services to harm others.",
+        "userResponsibilitiesTitle": "User Responsibilities",
+        "userResponsibilities": "As a user of our services, you are responsible for any activity that occurs through your account.",
+        "userResponsibilitiesItem1": "You are responsible for maintaining the confidentiality of your account information.",
+        "userResponsibilitiesItem2": "You are responsible for all activities that occur under your account.",
+        "userResponsibilitiesItem3": "You agree to notify us immediately of any unauthorized use of your account.",
+        "intellectualPropertyTitle": "Intellectual Property",
+        "intellectualProperty": "All content included in our services, such as text, graphics, logos, and images, is our property or the property of our licensors and is protected by copyright and other laws.",
+        "terminationTitle": "Termination",
+        "termination": "We may terminate or suspend your access to our services immediately, without prior notice, if you breach these terms and conditions.",
+        "disclaimerTitle": "Disclaimer",
+        "disclaimer": "Our services are provided on an 'as is' basis. We make no warranties or representations about the accuracy or completeness of our services.",
+        "changesTitle": "Changes to These Terms",
+        "changes": "We reserve the right to modify these terms and conditions at any time. Any changes will be effective immediately upon posting.",
+        "contactTitle": "Contact Us",
+        "contact": "If you have any questions about these terms and conditions, please contact us at"
+    },
+    
+    "footer": {
+        "logoTitle": "Daily Code Challenge",
+        "description": "Daily Code Challenge is your daily grind to become a better programmer. Crush challenges, climb the leaderboard, and join our developer community!",
+        "aboutUs": "About Us",
+        "links": {
+            "home": "Home",
+            "dailyChallenge": "Daily Challenge",
+            "moreChallenges": "More Challenges",
+            "ranking": "Ranking",
+            "about": "About",
+            "faqSupport": "FAQ-Support",
+            "privacyPolicy": "Privacy Policy",
+            "termsConditions": "Terms & Conditions",
+            "contactUs": "Contact Us",
+            "donate": "Donate"
+        },
+        "contactUsTitle": "Contact Us",
+        "contactForm": {
+            "emailPlaceholder": "Your Email",
+            "messagePlaceholder": "Your Message",
+            "submitButton": "Send Message",
+            "loginWarning": "Please log in to use this function.",
+            "successMessage": "Message sent successfully",
+            "errorMessage": "Error sending message"
+        },
+        "copyright": "© 2024 Josué Ortiz"
+    }
+    
+    
+}

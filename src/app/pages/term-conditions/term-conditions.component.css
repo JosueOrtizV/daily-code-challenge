@@ -1,0 +1,71 @@
+.terms-conditions-section {
+    margin-top: 6rem;
+    font-family: 'Arial', sans-serif;
+}
+
+.terms-conditions-section .container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.terms-conditions-section h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    color: #222;
+    font-weight: bold;
+}
+
+.terms-conditions-section h2 {
+    margin-top: 2rem;
+    font-size: 1.8rem;
+    color: #444;
+    font-weight: bold;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 0.5rem;
+}
+
+.terms-conditions-section p,
+.terms-conditions-section ul {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.terms-conditions-section ul {
+    list-style: disc inside;
+    padding-left: 1.5rem;
+}
+
+.terms-conditions-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.terms-conditions-section a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.terms-conditions-section a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .terms-conditions-section {
+        margin-top: 4rem;
+    }
+
+    .terms-conditions-section h1 {
+        font-size: 2rem;
+    }
+
+    .terms-conditions-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .terms-conditions-section p,
+    .terms-conditions-section ul {
+        font-size: 1rem;
+    }
+}

@@ -1,0 +1,31 @@
+<div id="about" class="about-section">
+    <section class="container about-container">
+        <h1>{{ 'about.title' | translate }}</h1>
+        <p>{{ 'about.description' | translate }}</p>
+        
+        <div class="team">
+            <h2>{{ 'about.teamTitle' | translate }}</h2>
+            <div class="team-members">
+                <div class="team-member" *ngFor="let member of team">
+                    <img [src]="member.photo" alt="{{ member.name }}">
+                    <h3>{{ member.name }}</h3>
+                    <p>{{ member.role }}</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="mission">
+            <h2>{{ 'about.missionTitle' | translate }}</h2>
+            <p>{{ 'about.missionDescription' | translate }}</p>
+        </div>
+        
+        <div class="values">
+            <h2>{{ 'about.valuesTitle' | translate }}</h2>
+            <ul>
+                <li *ngFor="let value of values">
+                    <i class="fas fa-check-circle"></i> {{ value }}
+                </li>
+            </ul>
+        </div>
+    </section>
+</div>

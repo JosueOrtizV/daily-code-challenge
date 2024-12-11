@@ -1,0 +1,21 @@
+<section class="faq-support">
+    <div class="container">
+        <h1>{{ 'faq.title' | translate }}</h1>
+        <div class="accordion" id="faqAccordion">
+            <div *ngFor="let faq of faqs; let i = index" class="card">
+                <div class="card-header" id="heading{{i}}">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link" type="button" (click)="toggleAccordion(i)" [attr.aria-expanded]="expandedIndex === i ? 'true' : 'false'" [attr.aria-controls]="'collapse'+i">
+                            {{ faq.question | translate }}
+                        </button>
+                    </h2>
+                </div>
+                <div [id]="'collapse'+i" class="collapse" [class.show]="expandedIndex === i" [attr.aria-labelledby]="'heading'+i" data-parent="#faqAccordion">
+                    <div class="card-body">
+                        {{ faq.answer | translate }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

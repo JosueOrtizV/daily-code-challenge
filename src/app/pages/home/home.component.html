@@ -1,0 +1,22 @@
+<div class="home">
+    <app-welcome></app-welcome>
+    <app-features></app-features>
+    <app-challenges-of-the-day></app-challenges-of-the-day>
+    <app-news-updates></app-news-updates>
+    
+    <section class="support-us">
+        <div class="container">
+            <h2>{{ 'home.supportUs.title' | translate }}</h2>
+            <p>{{ 'home.supportUs.description' | translate }}</p>
+            <a [routerLink]="['/donate']" class="main-btn btn-hover">{{ 'home.supportUs.buttonText' | translate }}</a>
+        </div>
+    </section>
+    
+    <section class="contact">
+        <div class="container">
+            <h2>{{ 'home.contact.title' | translate }}</h2>
+            <p>{{ 'home.contact.description' | translate }}</p>
+            <a [routerLink]="['/contact']" class="main-btn btn-hover">{{ 'home.contact.buttonText' | translate }}</a>
+        </div>
+    </section>
+</div>

@@ -1,0 +1,52 @@
+<div id="leaderboard" class="leaderboard-section">
+    <section class="container leaderboard-container">
+        <h1>{{ 'leaderboard.title' | translate }}</h1>
+        
+        <div class="filters">
+            <button (click)="changeFilter('daily')" [class.active]="filter === 'daily'">
+                {{ 'leaderboard.filters.daily' | translate }}
+            </button>
+            <button (click)="changeFilter('weekly')" [class.active]="filter === 'weekly'">
+                {{ 'leaderboard.filters.weekly' | translate }}
+            </button>
+            <button (click)="changeFilter('monthly')" [class.active]="filter === 'monthly'">
+                {{ 'leaderboard.filters.monthly' | translate }}
+            </button>
+            <button (click)="changeFilter('global')" [class.active]="filter === 'global'">
+                {{ 'leaderboard.filters.global' | translate }}
+            </button>
+        </div>
+        
+        <table class="leaderboard-table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>{{ 'leaderboard.username' | translate }}</th>
+                    <th>{{ 'leaderboard.points' | translate }}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let index of [].constructor(10); let i = index">
+                    <td>{{ i + 1 }}</td>
+                    <td>{{ leaderboard[i]?.username || '--' }}</td>
+                    <td>
+                        {{ leaderboard[i] ? (filter === 'daily' ? leaderboard[i].dailyScore 
+                        : filter === 'weekly' ? leaderboard[i].weeklyScore 
+                        : filter === 'monthly' ? leaderboard[i].monthlyScore 
+                        : leaderboard[i].globalScore) || '--' : '--' }}
+                    </td>
+                </tr>
+                <tr *ngIf="loggedIn && userRank && userRank.rank > leaderboard.length" [class.highlight]="true">
+                    <td>{{ userRank.rank }}</td>
+                    <td>{{ userRank.username }}</td>
+                    <td>
+                        {{ filter === 'daily' ? userRank.dailyScore 
+                        : filter === 'weekly' ? userRank.weeklyScore 
+                        : filter === 'monthly' ? userRank.monthlyScore 
+                        : userRank.globalScore }}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+</div>

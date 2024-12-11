@@ -1,0 +1,34 @@
+<div id="daily-challenge">
+    <section class="container daily-challenge">
+        <h1>{{ 'dailyChallenge.title' | translate }}</h1>
+        <div class="user-dif">
+            <app-username></app-username>
+            
+            <div class="input-group" id="difficulty-level">
+                <label for="difficulty">{{ 'dailyChallenge.difficultyLabel' | translate }}</label>
+                <select id="difficulty" name="difficulty" [(ngModel)]="difficulty">
+                    <option value="easy">{{ 'dailyChallenge.difficultyOptions.easy' | translate }}</option>
+                    <option value="intermediate">{{ 'dailyChallenge.difficultyOptions.intermediate' | translate }}</option>
+                    <option value="hard">{{ 'dailyChallenge.difficultyOptions.hard' | translate }}</option>
+                    <option value="extreme">{{ 'dailyChallenge.difficultyOptions.extreme' | translate }}</option>
+                </select>
+            </div>
+        </div>
+        <p id="date">{{ 'dailyChallenge.challengeFrom' | translate }} {{ fechaFormateada }} Mexico</p>
+        <div class="copy-div" *ngIf="showCopyButton">
+            <button class="copy-button tooltip" id="copy-exercise" (click)="copy(tooltip1)">
+                <img src="assets/images/copy-icon.svg" alt="Copy icon"> {{ 'dailyChallenge.copyButton' | translate }}
+                <span #tooltip1 class="tooltiptext">{{ 'dailyChallenge.tooltip.copy' | translate }}</span>
+            </button>
+        </div>
+        <div id="exercise" #exerciseTextarea class="exercise-display">
+            <span *ngIf="!exercise" class="placeholder">{{ placeholder }}</span>
+            <div [innerHTML]="exercise"></div> 
+        </div>
+        <button id="getdaily" class="main-btn btn-hover tooltip" (click)="getChallenge()">
+            {{ 'dailyChallenge.getChallengeButton' | translate }}
+            <span class="tooltiptext">{{ 'dailyChallenge.tooltip.getChallenge' | translate }}</span>
+        </button>
+    </section>
+    <app-checkcode class="container" [difficulty]="difficulty" [username]="username" [token]="token" [language]="language" [loggedIn]="loggedIn"></app-checkcode>
+</div>

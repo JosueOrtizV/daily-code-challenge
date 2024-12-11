@@ -1,0 +1,152 @@
+.features {
+    background-color: var(--color-extra);
+    padding: 2rem 1rem;
+    border-radius: 200px 0px;
+    transition: padding 0.3s ease;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.features .features-active-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.features ul {
+    list-style: none;
+    padding: 0;
+}
+
+.features li {
+    margin-bottom: 20px;
+}
+
+.slider-container {
+    overflow: hidden;
+    width: 90%;
+    padding: 0;
+}
+
+.tns-slider {
+    display: flex;
+    overflow: hidden;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.slider-item {
+    flex: 0 0 auto;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1rem;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.slider-item a {
+    width: 100%;
+    height: 100%;
+}
+
+.card {
+    color: var(--text-primary);
+    text-align: center;
+    margin: 0 auto;
+    max-width: 400px;
+    height: 100%;       
+    background: var(--color-background);
+    border-radius: 15px;
+    padding: 1.5rem;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.card h3 {
+    color: var(--color-primary);
+    margin-bottom: 0.75rem;
+}
+
+.card img {
+    width: 60%;
+    height: auto;
+    margin-bottom: 0.5rem;
+    border-radius: 5px;
+}
+
+.card p {
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+@media (max-width: 1024px) {
+    .features {
+        border-radius: 0px;
+        max-width: 100%;
+        padding: 1.5rem 1rem;
+    }
+
+    .slider-item {
+        width: 100%;
+        padding: 0.75rem;
+    }
+
+    .slider-container {
+        max-width: 700px;
+    }
+
+    .card {
+        width: 90%;
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .features {
+        max-width: 100%;
+        padding: 1rem 0.5rem;
+    }
+
+    .slider-item {
+        width: 100%;
+        padding: 0.5rem;
+    }
+
+    .slider-container {
+        max-width: 300px;
+    }
+
+    .card {
+        width: 85%;
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .features {
+        max-width: 100%;
+        padding: 0.5rem;
+    }
+
+    .slider-item {
+        width: 250px;
+        padding: 0.25rem;
+    }
+
+    .slider-container {
+        max-width: 300px;
+    }
+
+    .card {
+        width: 70%;
+        padding: 0.5rem;
+    }
+}

@@ -1,0 +1,40 @@
+<div id="more-challenges">
+    <section class="container more-challenges">
+        <h1>{{ 'moreChallenges.title' | translate }}</h1>
+        <div class="user-dif">
+            <app-username></app-username>
+            
+            <div class="input-group" id="difficulty-level">
+                <label for="difficulty">{{ 'moreChallenges.difficultyLabel' | translate }}</label>
+                <select id="difficulty" name="difficulty">
+                    <option value="easy">{{ 'moreChallenges.difficultyOptions.easy' | translate }}</option>
+                    <option value="intermediate">{{ 'moreChallenges.difficultyOptions.intermediate' | translate }}</option>
+                    <option value="hard">{{ 'moreChallenges.difficultyOptions.hard' | translate }}</option>
+                    <option value="extreme">{{ 'moreChallenges.difficultyOptions.extreme' | translate }}</option>
+                </select>
+            </div>
+        </div>
+        <div class="copy-div" *ngIf="showCopyButton">
+            <button class="copy-button tooltip" id="copy-exercise" (click)="copy(tooltip1)">
+                <img src="assets/images/copy-icon.svg" alt="Copy icon"> {{ 'dailyChallenge.copyButton' | translate }}
+                <span #tooltip1 class="tooltiptext">{{ 'moreChallenges.tooltip.copy' | translate }}</span>
+            </button>
+        </div>
+        <div id="exercise" #exerciseTextarea class="exercise-display">
+            <span *ngIf="!exercise" class="placeholder">{{ placeholder }}</span>
+            {{ exercise }}
+        </div>
+        <div class="message-container" *ngIf="messageVisible">
+            <p *ngIf="warningMessage" class="warning-message">{{ warningMessage }}</p>
+        </div>
+        <button id="getchallenge" class="main-btn btn-hover tooltip" (click)="getChallenge()">
+            {{ 'moreChallenges.getChallengeButton' | translate }}
+            <span class="tooltiptext">{{ 'moreChallenges.tooltip.getChallenge' | translate }}</span>
+        </button>
+        <div *ngIf="loadingChallenge" class="loading-spinner">
+            <mat-progress-spinner mode="indeterminate" class="mat-spinner"></mat-progress-spinner>
+            <p>Loading...</p>
+        </div>
+    </section>
+</div>
+

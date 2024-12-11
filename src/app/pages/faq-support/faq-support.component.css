@@ -1,0 +1,55 @@
+.faq-support {
+    margin-top: 6rem;
+}
+
+.faq-support .container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-support h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.accordion .card {
+    border: none;
+    margin-bottom: 1rem;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.accordion .card-header {
+    border-bottom: none;
+    background-color: transparent;
+}
+
+.accordion .btn-link {
+    text-decoration: none;
+    font-size: 1.25rem;
+    color: #007bff;
+    display: block;
+    width: 100%;
+    text-align: left;
+}
+
+.accordion .btn-link:hover {
+    color: #0056b3;
+}
+
+.accordion .collapse.show {
+    border-top: 1px solid #ddd;
+}
+
+.accordion .card-body {
+    padding: 1rem;
+    font-size: 1rem;
+    color: #555;
+}
+
+@media (max-width: 575.98px) {
+    .faq-support {
+        margin-top: 4rem;
+    }
+}

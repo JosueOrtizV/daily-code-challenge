@@ -1,0 +1,86 @@
+#leaderboard {
+    margin-top: 5rem;
+    background-color: var(--color-background);
+    color: var(--text-primary);
+}
+
+.leaderboard-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.leaderboard-container h1 {
+    color: var(--color-primary);
+    margin-bottom: 1.5rem;
+}
+
+.filters {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.filters button {
+    background: var(--color-extra);
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.filters button.active {
+    background: var(--color-primary);
+    color: var(--text-white);
+}
+
+.filters button:hover {
+    background: var(--color-secondary);
+}
+
+.leaderboard-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.leaderboard-table th, .leaderboard-table td {
+    padding: 10px;
+    border: 1px solid var(--text-tertiary);
+}
+
+.leaderboard-table th {
+    background: var(--color-tertiary);
+    color: var(--text-primary);
+}
+
+.leaderboard-table td {
+    text-align: center;
+}
+
+.highlight {
+    background-color: var(--color-extra);
+    font-weight: bold;
+}
+
+
+@media (max-width: 575.98px) {
+    .filters {
+        flex-direction: column;
+    }
+
+    .filters button {
+        margin-bottom: 10px;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 991.98px) {
+    .filters button {
+        padding: 8px 15px;
+    }
+
+    .leaderboard-table th, .leaderboard-table td {
+        padding: 8px;
+    }
+}

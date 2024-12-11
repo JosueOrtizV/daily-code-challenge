@@ -1,0 +1,44 @@
+<div class="profile-settings" *ngIf="!loading && loggedIn">
+    <h2>{{ 'profile.settings' | translate }}</h2>
+    
+    <div class="change-name">
+        <h4>{{ 'profile.profile-settings.changeUsername' | translate }}</h4>
+        <input [(ngModel)]="newUsername" placeholder="{{ 'profile.profile-settings.newUsername' | translate }}" />
+        <button (click)="showChangeNameConfirm()" class="main-btn btn-hover">{{ 'profile.profile-settings.change' | translate }}</button>
+        <div class="message">{{ message }}</div>
+        <div *ngIf="usernameWarningMessage" class="error-container">{{ usernameWarningMessage }}</div>
+    </div>
+
+    <div class="link-accounts">
+        <h4>{{ 'profile.profile-settings.linkAccount' | translate }}</h4>
+
+        <div class="linked-accounts" *ngIf="googleLinked; else googleLinkButton">
+            {{ googleEmail }} - {{ 'profile.profile-settings.googleLinkedAccount' | translate }}
+        </div>
+        <ng-template #googleLinkButton>
+            <button (click)="linkGoogleAccount()" class="main-btn btn-hover">{{ 'profile.profile-settings.googleAccount' | translate }}</button>
+        </ng-template>
+
+        <div class="linked-accounts" *ngIf="gitHubLinked; else githubLinkButton">
+            {{ gitHubEmail }} - {{ 'profile.profile-settings.githubLinkedAccount' | translate }}
+        </div>
+        <ng-template #githubLinkButton>
+            <button (click)="linkGitHubAccount()" class="main-btn btn-hover">{{ 'profile.profile-settings.githubAccount' | translate }}</button>
+        </ng-template>
+
+        <div class="message-container" *ngIf="messageVisible">
+            <p *ngIf="linkWarningMessage" class="warning-message">{{ linkWarningMessage }}</p>
+            <p *ngIf="confirmMessage" class="confirm-message">{{ confirmMessage }}</p>
+        </div>
+    </div>
+
+    <div class="modal" *ngIf="showModal">
+        <div class="modal-content">
+            <p>{{ 'profile.profile-settings.confirmChangeUsername' | translate }}</p>
+            <div class="modal-actions">
+                <button class="main-btn btn-cancel" (click)="hideChangeNameConfirm()">{{ 'profile.cancel' | translate }}</button>
+                <button class="main-btn btn-confirm" (click)="confirmChangeName()">{{ 'profile.profile-settings.confirm' | translate }}</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,53 @@
+<header class="header">
+    <div id="navbarArea" class="navbar-area" [class.sticky]="isSticky">
+        <div>
+            <div class="align-items-center">
+                <div>
+                    <nav class="navbar navbar-expand-lg">
+                        <a class="navbar-brand" [routerLink]="['/home']">
+                            <img src="assets/images/daily-code-icon.svg" alt="Daily Code Icon">
+                            <p>Daily Code Challenge</p>
+                        </a>
+
+                        <div class="collapse navbar-collapse sub-menu-bar" [class.show]="isTogglerActive" id="navbarSupportedContent">
+                            <ul id="nav" class="navbar-nav main-list ms-auto">
+                                <ng-container>
+                                    <li class="nav-item" (click)="closeToggler()"><a class="page-scroll" [routerLink]="['/home']" routerLinkActive="actived">{{ 'header.home' | translate }}</a></li>
+                                    <li class="nav-item" (click)="closeToggler()"><a class="page-scroll" [routerLink]="['/daily-challenge']" routerLinkActive="actived">{{ 'header.dailyChallenge' | translate }}</a></li>
+                                    <li class="nav-item" (click)="closeToggler()"><a class="page-scroll" [routerLink]="['/more-challenges']" routerLinkActive="actived">{{ 'header.moreChallenges' | translate }}</a></li>
+                                    <li class="nav-item" (click)="closeToggler()"><a class="page-scroll" [routerLink]="['/ranking']" routerLinkActive="actived">{{ 'header.ranking' | translate }}</a></li>
+                                    <li class="nav-item" (click)="closeToggler()"><a class="page-scroll" [routerLink]="['/about']" routerLinkActive="actived">{{ 'header.about' | translate }}</a></li>
+                                    <li class="nav-item more-options-toggle" [ngClass]="{'show-more': !showMoreOptions, 'hide-more': showMoreOptions}" (click)="toggleMoreOptions()"></li>
+                                </ng-container>
+                            </ul>
+                            <ul class="navbar-nav ms-auto more" [class.show-more-options]="showMoreOptions">
+                                <li *ngIf="!loading && loggedIn" class="nav-item" (click)="closeToggler()"><a class="page-scroll" [routerLink]="['/profile']" routerLinkActive="actived">{{ 'header.profile' | translate }}</a></li>
+                                <li class="nav-item" (click)="closeToggler()"><a class="page-scroll" [routerLink]="['/faq-support']" routerLinkActive="actived">{{ 'header.faqSupport' | translate }}</a></li>
+                                <li class="nav-item" (click)="closeToggler()"><a class="page-scroll" [routerLink]="['/contact']" routerLinkActive="actived">{{ 'header.contactUs' | translate }}</a></li>
+                                <li class="nav-item" (click)="closeToggler()"><a class="page-scroll" [routerLink]="['/donate']" routerLinkActive="actived">{{ 'header.donate' | translate }}</a></li>
+                                <li class="nav-item" (click)="closeToggler()"><a class="page-scroll" [routerLink]="['/privacy-policy']" routerLinkActive="actived">{{ 'header.privacyPolicy' | translate }}</a></li>
+                                <li class="nav-item" (click)="closeToggler()"><a class="page-scroll" [routerLink]="['/terms-&-conditions']" routerLinkActive="actived">{{ 'header.termsConditions' | translate }}</a></li>
+                            </ul>
+                        </div> <!-- navbar collapse -->
+
+                        <!-- Login Button and Language Switcher -->
+                        <div class="login-toogler">
+                            <label class="switch">
+                                <input type="checkbox" id="toggle-btn" (change)="toggleLanguage()">
+                                <span class="slider round"></span>
+                            </label>
+                            <a *ngIf="!loading && !loggedIn" class="main-btn btn-hover login-btn" [routerLink]="['/login']">{{ 'header.login' | translate }}</a>
+
+                            <button [ngClass]="{'navbar-toggler': true, 'active': isTogglerActive}" (click)="onTogglerClick()" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                            </button>
+                        </div>
+
+                    </nav> <!-- navbar -->
+                </div>
+            </div> 
+        </div>
+    </div>
+</header>

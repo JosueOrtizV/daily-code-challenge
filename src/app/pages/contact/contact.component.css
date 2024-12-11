@@ -1,0 +1,130 @@
+.contact-section {
+    margin-top: 6rem;
+}
+
+.contact-section .container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact-section h1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.contact-section h2 {
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+.contact-section p {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+    color: #666;
+}
+
+.contact-section .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.contact-section label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    color: #333;
+}
+
+.contact-section input,
+.contact-section textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #333;
+}
+
+.contact-section textarea {
+    resize: none;
+    height: 150px;
+}
+
+.contact-section .message-container {
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.contact-section .warning-message {
+    color: #e74c3c;
+}
+
+.main-btn {
+    display: block;
+    margin: 0px auto;
+    padding: 15px 20px;
+    background-color: var(--color-primary);
+    color: var(--text-white);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.main-btn:hover {
+    background-color: #66D9E8;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.social-links li {
+    margin-right: 10px;
+    list-style: none;
+}
+
+.social-links li a {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #E3FDFF;
+    color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.social-links li a:hover {
+    background: #37C2CC;
+    color: #fff;
+    border: 2px solid #fff;
+}
+
+.social-links li img {
+    width: 32px;
+    height: 32px;
+    filter: invert(0);
+    transition: filter 0.3s ease;
+}
+
+.social-links li #link {
+    width: 22px;
+    height: 22px;
+}
+
+.social-links li a:hover img {
+    filter: invert(1);
+}
+
+@media (max-width: 575.98px) {
+    .contact-section {
+        margin-top: 4rem;
+    }
+}

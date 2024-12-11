@@ -1,0 +1,31 @@
+<div class="input-group" id="username-input" *ngIf="!loading && !loggedIn">
+    <label for="username" id="username-label" [innerHTML]="'dailyChallenge.username.enterUsername' | translate"></label>
+    <div id="username-save">
+        <input id="username" [(ngModel)]="username" [placeholder]="'dailyChallenge.username.placeholder' | translate" type="text" name="username"/>
+        <button class="tooltip main-btn btn-hover" id="save-btn" (click)="showLoginConfirm()">
+            {{ 'dailyChallenge.username.save' | translate }}
+            <span #tooltip1 class="tooltiptext">{{ 'dailyChallenge.username.tooltip' | translate }}</span>
+        </button>
+    </div>
+    <div *ngIf="error$ | async as error" class="error-message">
+        <p>{{ error }}</p>
+    </div>
+</div>
+
+<div class="input-group" id="username-input-logged" *ngIf="!loading && loggedIn">
+    <p id="username-label">{{ 'dailyChallenge.username.usernameLabel' | translate }}</p>
+    <p id="username-display"><strong>{{ username }}</strong></p>
+</div>
+
+<ng-template #loginConfirm>
+    <div class="modal">
+        <div class="modal-content">
+            <p>{{ 'login.confirmLogin' | translate }}</p>
+            <div class="modal-actions">
+                <button class="main-btn btn-cancel" (click)="hideLoginConfirm()">{{ 'login.cancel' | translate }}</button>
+                <button class="main-btn btn-confirm" (click)="confirmLogin()">{{ 'login.confirm' | translate }}</button>
+            </div>
+        </div>
+    </div>
+</ng-template>
+<div *ngIf="showLoginModal" [ngTemplateOutlet]="loginConfirm"></div>

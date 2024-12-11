@@ -1,0 +1,64 @@
+<section class="profile">
+    <div class="container">
+        <div class="profile-container">
+            <div class="profile-header">
+                <div class="header-content">
+                    <img class="profile-avatar" [src]="userPhoto" alt="User Avatar" loading="lazy" />
+                    <div class="header-text">
+                        <h1>{{ 'profile.header' | translate : { username: username } }}</h1>
+                        <h3 class="profile-subtitle">{{ 'profile.subtitle' | translate }}</h3>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="profile-content">
+                <nav class="sidebar" *ngIf="isDesktop; else mobileToolbar">
+                    <ul class="navbar-nav main-list">
+                        <ng-container>
+                            <li class="nav-item">
+                                <a class="page-scroll" [routerLink]="['/profile/progress']" routerLinkActive="actived">{{ 'profile.progress-title' | translate }}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="page-scroll" [routerLink]="['/profile/profile-settings']" routerLinkActive="actived">{{ 'profile.settings' | translate }}</a>
+                            </li>
+                        </ng-container>
+                    </ul>
+                    <div class="logout-container">
+                        <button mat-button aria-label="Cerrar sesión" class="main-btn btn-hover logout-btn special-logout-btn" (click)="showLogoutConfirm()">{{ 'profile.logout' | translate }}</button>
+                    </div>
+                </nav>
+                
+                <ng-template #mobileToolbar>
+                    <mat-toolbar color="primary" class="mobile-toolbar">
+                        <span>Menu</span>
+                        <button mat-icon-button [matMenuTriggerFor]="menu">
+                            <mat-icon><img src="/assets/images/menu.svg" alt="Menu"></mat-icon>
+                        </button>
+                    </mat-toolbar>
+                    <mat-menu #menu="matMenu">
+                        <button mat-menu-item [routerLink]="['/profile/progress']" routerLinkActive="actived">{{ 'profile.progress-title' | translate }}</button>
+                        <button mat-menu-item [routerLink]="['/profile/profile-settings']" routerLinkActive="actived">{{ 'profile.settings' | translate }}</button>
+                        <button mat-menu-item class="special-logout-btn" (click)="showLogoutConfirm()">{{ 'profile.logout' | translate }}</button>
+                    </mat-menu>
+                </ng-template>
+                
+                <main class="main-panel">
+                    <router-outlet></router-outlet>
+                </main>
+            </div>
+        </div>
+    </div>
+
+    <ng-template #logoutConfirm>
+        <div class="modal">
+            <div class="modal-content">
+                <p>{{ 'profile.confirmLogout' | translate }}</p>
+                <div class="modal-actions">
+                    <button class="main-btn btn-cancel" (click)="hideLogoutConfirm()">{{ 'profile.cancel' | translate }}</button>
+                    <button class="main-btn btn-logout" (click)="confirmLogout()">{{ 'profile.logout' | translate }}</button>
+                </div>
+            </div>
+        </div>
+    </ng-template>
+    <div *ngIf="showModal" [ngTemplateOutlet]="logoutConfirm"></div>
+</section>

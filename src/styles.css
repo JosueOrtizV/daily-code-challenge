@@ -1,1 +1,408 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global Imports */
+@import './assets/css/bootstrap.min.css';
+@import './assets/css/lineicons.css';
+@import './assets/css/tiny-slider.css';
+@import url("https://fonts.googleapis.com/css2?family=Sen:wght@400;700;800&display=swap");
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+/* Root Variables */
+:root {
+    --color-primary: #37C2CC;
+    --color-secondary: #66D9E8;
+    --color-tertiary: #96E6F4;
+    --color-accent: #C6F3FB;
+    --color-extra: #E3FDFF;
+    --color-background: #FFFFFF;
+    --text-primary: #000000; 
+    --text-secondary: #333333; 
+    --text-tertiary: #666666;
+    --text-accent: #999999;
+    --text-white: #FFFFFF;
+}
+
+/* General Styles */
+html {
+    scroll-behavior: smooth;
+    width: 100%;
+}
+
+body {
+    font-family: "Sen", sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    background: var(--color-background);
+}
+
+html, body {
+    max-width: 100%;
+    max-height: 100%;
+    overflow-x: hidden;
+}
+
+
+app-root {
+    display: grid;
+    min-height: 100vh;
+    grid-template-rows: auto 1fr auto;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    color: var(--text-white);
+    text-decoration: none;
+}
+
+a, a:focus, a:hover {
+    text-decoration: none;
+    transition: all 0.3s ease-out 0s;
+    display: inline-block;
+}
+
+a:hover {
+    color: var(--color-primary);
+}
+
+audio, canvas, iframe, img, svg, video {
+    vertical-align: middle;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    margin: 0;
+    color: inherit;
+}
+
+h1, h2, h3 {
+    font-weight: bold;
+    color: var(--color-primary);
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+h4 {
+    font-size: 1.25rem;
+}
+
+h5 {
+    font-size: 1.125rem;
+}
+
+h6 {
+    font-size: 1rem;
+}
+
+ul, ol {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+p {
+    font-size: 16px;
+    color: var(--text-secondary);
+    font-weight: 400;
+    line-height: 25px;
+    margin: 0;
+}
+
+/* Estilos para las secciones */
+.container {
+    padding: 2rem;
+}
+
+.section-title {
+    margin-bottom: 2rem;
+}
+
+/* Button Styles */
+.main-btn {
+    display: inline-block;
+    padding: 15px 28px;
+    font-size: 21px;
+    line-height: 1;
+    border-radius: 10px;
+    color: var(--text-white);
+    background: var(--color-primary);
+    border: 2px solid transparent;
+    cursor: pointer;
+    z-index: 5;
+    transition: background-color 0.4s ease-in-out;
+}
+
+.main-btn:hover {
+    background-color: var(--color-secondary);
+    color: var(--text-white);
+}
+
+.main-btn.border-btn {
+    border: 2px solid var(--color-primary);
+    background: transparent;
+    color: var(--color-primary);
+}
+
+.main-btn.border-btn:hover {
+    background-color: rgba(55, 194, 204, 0.15);
+}
+
+/* Simplified btn-hover */
+.btn-hover {
+    position: relative;
+    transition: transform 0.3s ease-out;
+}
+
+.btn-hover:hover {
+    transform: scale(1.05);
+}
+
+/* slider */
+
+.controls {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: absolute;
+    left: 0;    
+    width: 100%;    
+    top: 50%;
+    display: flex;
+    align-items: center;    
+    justify-content: space-between;
+}
+
+.controls button {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    background: var(--color-background);
+    color: rgba(0, 0, 0, 0.9);
+    border: 1px solid var(--color-primary);
+    transition: all 0.3s ease-out 0s;
+    margin: 0 5px;
+}
+
+.controls button:hover {
+    background: var(--color-primary);
+    color: var(--color-background);
+}
+
+.slider-item {
+    padding: 1rem 2rem;
+    cursor: pointer;
+}
+
+.slider-container {    
+    padding: 2rem 4rem;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+/* tooltips */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 200px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    font-size: 14px;
+    border-radius: 5px;
+    padding: 5px 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%; 
+    left: 50%;
+    margin-left: -100px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+.loading-spinner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    z-index: 9999;
+}
+
+.mat-spinner {
+    margin-bottom: 20px;
+}
+
+
+
+/* Media Queries */
+
+@media (max-width: 575.98px) {
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.25rem;
+    }
+
+    h4 {
+        font-size: 1rem;
+    }
+
+    h5 {
+        font-size: 0.875rem;
+    }
+
+    h6 {
+        font-size: 0.75rem;
+    }
+
+    .container {
+        padding: 1rem;
+    }
+
+    .main-btn {
+        font-size: 1rem;
+        padding: 12px 20px;
+    }
+
+    .slider-container {
+        padding: 1rem;
+    }
+
+    #daily-challenge, #more-challenges, #leaderboard, #about{
+        margin-top: 4rem !important;
+    }
+
+
+}
+
+@media (min-width: 576px) and (max-width: 991.98px) {
+    h1 {
+        font-size: 2.25rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-size: 1.75rem;
+    }
+
+    h4 {
+        font-size: 1.5rem;
+    }
+
+    h5 {
+        font-size: 1.25rem;
+    }
+
+    h6 {
+        font-size: 1rem;
+    }
+
+    .container {
+        padding: 1.5rem;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .main-btn {
+        font-size: 1.125rem;
+        padding: 15px 25px;
+    }
+
+    .slider-container {
+        padding: 1.5rem;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    h1 {
+        font-size: 2.75rem;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    h3 {
+        font-size: 2rem;
+    }
+
+    h4 {
+        font-size: 1.75rem;
+    }
+
+    h5 {
+        font-size: 1.5rem;
+    }
+
+    h6 {
+        font-size: 1.25rem;
+    }
+
+    .container {
+        padding: 2rem;
+    }
+
+    .main-btn {
+        font-size: 1.25rem;
+        padding: 18px 28px;
+    }
+
+    .slider-container {
+        padding: 2rem;
+    }
+}
+

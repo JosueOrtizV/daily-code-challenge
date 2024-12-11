@@ -1,0 +1,64 @@
+<section class="features">
+    <div class="container">
+        <div class="features-active-wrapper">
+            <h2 class="section-title">{{ 'home.features.title' | translate }}</h2>
+            <div class="slider-container">
+                <div class="tns-slider">
+                    <div class="slider-item">
+                        <a [routerLink]="['/daily-challenge']">
+                            <div class="card">
+                                <h3>{{ 'home.features.dailyChallenges.title' | translate }}</h3>
+                                <img src="assets/images/features/daily-code-challenge.png" alt="Daily Challenges Image" srcset="">
+                                <p>{{ 'home.features.dailyChallenges.description' | translate }}</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="slider-item">
+                        <a [routerLink]="['/more-challenges']">
+                            <div class="card">
+                                <h3>{{ 'home.features.moreChallenges.title' | translate }}</h3>
+                                <img src="assets/images/features/potential.png" alt="Unlock Potential">
+                                <p>{{ 'home.features.moreChallenges.description' | translate }}</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="slider-item">
+                        <a [routerLink]="['/ranking']">
+                            <div class="card">
+                                <h3>{{ 'home.features.leaderboard.title' | translate }}</h3>
+                                <img src="assets/images/features/leaderboard.png" alt="Leaderboard Image" srcset="">
+                                <p>{{ 'home.features.leaderboard.description' | translate }}</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="slider-item">
+                        <a [routerLink]="['/about']">
+                            <div class="card">
+                                <h3>{{ 'home.features.aboutUs.title' | translate }}</h3>
+                                <img src="assets/images/features/about-us.png" alt="About Us Image" srcset="">
+                                <p>{{ 'home.features.aboutUs.description' | translate }}</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="slider-item">
+                        <a [routerLink]="['/faq-support']">
+                            <div class="card">
+                                <h3>{{ 'home.features.faqSupport.title' | translate }}</h3>
+                                <img src="assets/images/features/faq-support.png" alt="FAQ & Support Image" srcset="">
+                                <p>{{ 'home.features.faqSupport.description' | translate }}</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="controls" id="customize-controls" aria-label="Carousel Navigation" tabindex="0">
+                    <button class="prev" data-controls="prev" aria-controls="customize" tabindex="-1">
+                        <i class="lni lni-chevron-left"></i>
+                    </button>
+                    <button class="next" data-controls="next" aria-controls="customize" tabindex="-1">
+                        <i class="lni lni-chevron-right"></i>          
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

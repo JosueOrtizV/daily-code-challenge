@@ -1,0 +1,47 @@
+.donate-section {
+    margin-top: 6rem;
+}
+
+.donate-section .container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.donate-section h1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.donate-section p {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+}
+
+.donate-section .paypal-button {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.main-btn {
+    display: block;
+    margin: 0px auto;
+    padding: 15px 20px;
+    background-color: var(--color-primary);
+    color: var(--text-white);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.main-btn:hover {
+    background-color: #66D9E8;
+}
+
+@media (max-width: 575.98px) {
+    .donate-section {
+        margin-top: 4rem;
+    }
+}

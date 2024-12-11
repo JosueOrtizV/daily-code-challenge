@@ -1,0 +1,46 @@
+<section class="progress">
+    <div class="container">
+        <div class="welcome-header">
+            <h2>{{ 'profile.progress.title' | translate }}</h2>
+            <p class="welcome-subtitle">{{ 'profile.progress.subtitle' | translate }}</p>
+        </div>
+        
+        <div class="user-stats" *ngIf="scores">
+            <div class="stat-item">
+                <h3>{{ 'profile.progress.weeklyScore' | translate }}</h3>
+                <p id="weekly-score">{{scores.weeklyScore}}</p>
+            </div>
+            <div class="stat-item">
+                <h3>{{ 'profile.progress.monthlyScore' | translate }}</h3>
+                <p id="monthly-score">{{scores.monthlyScore}}</p>
+            </div>
+            <div class="stat-item">
+                <h3>{{ 'profile.progress.globalScore' | translate }}</h3>
+                <p id="global-score">{{scores.globalScore}}</p>
+            </div>
+        </div>
+
+        <div class="recent-activity">
+            <h3>{{ 'profile.progress.recentActivity' | translate }}</h3>
+            <ul id="recent-activity-list">
+                <li *ngIf="!challengeCompleted">{{ 'profile.progress.notCompleted' | translate }}</li>
+                <li *ngFor="let activity of recentActivity">
+                    {{ activity.localDate }} (Local) - {{ activity.date }} (Mexico) - 
+                    <span *ngIf="language === 'en'">{{ activity.challengeEN }} - {{ activity.statusEN }}</span>
+                    <span *ngIf="language === 'es'">{{ activity.challengeES }} - {{ activity.statusES }}</span>
+                    - Points: {{activity.points}}
+                </li>
+            </ul>
+        </div>
+
+        <div class="more-challenges" *ngIf="challengeCompleted">
+            <h3>{{ 'profile.progress.exploreMore' | translate }}</h3>
+            <a [routerLink]="['/more-challenges']" class="main-btn btn-hover">{{ 'profile.progress.tryMore' | translate }}</a>
+        </div>
+
+        <div class="daily-challenge" *ngIf="!challengeCompleted">
+            <h3>{{ 'profile.progress.todaysChallenge' | translate }}</h3>
+            <a [routerLink]="['/daily-challenge']" class="main-btn btn-hover">{{ 'profile.progress.startChallenge' | translate }}</a>
+        </div>
+    </div>
+</section>
