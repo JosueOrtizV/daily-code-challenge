@@ -39,7 +39,9 @@
 
 ## Licencia
 
-Este proyecto está licenciado bajo la Licencia MIT. Consulta el archivo [LICENSE](./LICENSE) para más detalles.
+Este proyecto está licenciado bajo la Licencia Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0). Puedes ver los términos completos de la licencia en [https://creativecommons.org/licenses/by-nc/4.0/](https://creativecommons.org/licenses/by-nc/4.0/).
+
+© 2024 Josué de Jesús Ortiz Vela
 
 ## Contacto
 
