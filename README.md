@@ -1,27 +1,52 @@
-# DailyCodeChallengeFrontend
+# Daily Code Challenge
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.4.
+![Daily Code Challenge Logo](./assets/images/daily-code-icon.svg)
 
-## Development server
+## Descripción
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+**Daily Code Challenge** es una plataforma diseñada para mejorar las habilidades de programación de los usuarios mediante la práctica diaria de problemas de programación. Los ejercicios son generados por inteligencia artificial utilizando la API de Gemini, y la plataforma soporta múltiples niveles de dificultad.
 
-## Code scaffolding
+## Características
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Problemas diarios de programación**: Practica diariamente para mejorar tus habilidades.
+- **Generación de ejercicios por IA**: Utiliza la API de Gemini para generar desafíos.
+- **Autenticación segura**: Utiliza Firebase de Google para la autenticación.
+- **Tecnologías modernas**: Incluye tecnologías como Javascript, Node.js, MongoDB, Angular, TypeScript y Redis.
+- **Interfaz amigable**: Diseño responsivo y fácil de usar.
 
-## Build
+## Tecnologías Utilizadas
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- **Backend**: Node.js y Express
+- **Bases de Datos**: MongoDB
+- **Frontend**: JavaScript, TypeScript, Angular, HTML, CSS
+- **Autenticación**: Firebase
+- **Cache**: Redis
 
-## Running unit tests
+## Uso
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+1. Regístrate o inicia sesión con tu cuenta.
+2. Selecciona el nivel de dificultad del desafío.
+3. Practica los problemas de programación diarios.
+4. Revisa tu código y obtén retroalimentación y puntuación.
 
-## Running end-to-end tests
+## Contribuciones
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+¡Las contribuciones son bienvenidas! Si deseas contribuir al proyecto, sigue estos pasos:
 
-## Further help
+1. Haz un fork del proyecto.
+2. Crea una rama con tu nueva función (`git checkout -b feature/nueva-funcion`).
+3. Realiza tus cambios y haz commit (`git commit -m 'Agrega nueva función'`).
+4. Sube tu rama (`git push origin feature/nueva-funcion`).
+5. Abre un pull request.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Licencia
+
+Este proyecto está licenciado bajo la Licencia MIT. Consulta el archivo [LICENSE](./LICENSE) para más detalles.
+
+## Contacto
+
+Para cualquier pregunta o comentario, puedes contactarme a través de [mi perfil de LinkedIn](https://www.linkedin.com/in/josue-ortizv/).
+
+---
+
+¡Espero que este README te sea útil! Si necesitas más ajustes o información adicional, no dudes en decírmelo. 🚀✨
