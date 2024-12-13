@@ -1,6 +1,6 @@
 # Daily Code Challenge
 
-![Daily Code Challenge Logo](./assets/images/daily-code-icon.svg)
+![Daily Code Challenge Logo](src/assets/images/daily-code-icon.svg)
 
 ## Descripción
 
@@ -48,5 +48,3 @@ Este proyecto está licenciado bajo la Licencia MIT. Consulta el archivo [LICENS
 Para cualquier pregunta o comentario, puedes contactarme a través de [mi perfil de LinkedIn](https://www.linkedin.com/in/josue-ortizv/).
 
 ---
-
-¡Espero que este README te sea útil! Si necesitas más ajustes o información adicional, no dudes en decírmelo. 🚀✨
