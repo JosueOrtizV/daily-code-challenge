@@ -1,7 +1,5 @@
 # Daily Code Challenge
 
-![Daily Code Challenge Logo](src/assets/images/daily-code-icon.svg)
-
 ## Descripción
 
 **Daily Code Challenge** es una plataforma diseñada para mejorar las habilidades de programación de los usuarios mediante la práctica diaria de problemas de programación. Los ejercicios son generados por inteligencia artificial utilizando la API de Gemini, y la plataforma soporta múltiples niveles de dificultad.
