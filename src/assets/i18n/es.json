@@ -92,14 +92,14 @@
                 "errorCheckingCode": "Error revisando el código: {{errorMessage}}",
                 "warningMessage": "Mensaje de Advertencia",
                 "checkingMessage": "Mensaje de Revisión",
-                "textareaPlaceholder": "Pega tu código aquí para revisarlo y obtener retroalimentación y puntuación. Tu ejercicio se marcará como completado después de presionar el botón de abajo.",
+                "textareaPlaceholder": "Pega tu código aquí para revisarlo y obtener retroalimentación y puntuación. La puntuacion dependera de la dificultad del ejercicio que hiciste",
                 "checkYourCode": "Revisa Tu Código",
                 "pressToMark": "Presiona para marcar tu ejercicio como completado",
                 "challengeCompleted": "¡Desafío Completado!",
                 "score": "Puntuación",
                 "globalScore": "Puntuación Global",
                 "feedback": "Retroalimentación",
-                "scoreMult": "Multiplicador de puntuación:\n- Fácil: 1.0\n- Intermedio: 1.5\n- Difícil: 2.0\n- Extremo: 2.5\nLa puntuación final se normalizará de 0 a 10.",
+                "scoreMult": "Selecciona la dificultad antes de dar click en 'Revisa tu codigo'.",
                 "nextChallenge": "El proximo desafio estara disponible en: "
             }
         },
@@ -364,8 +364,8 @@
     },
     
     "footer": {
-        "logoTitle": "Desafío Diario de Código",
-        "description": "Desafío Diario de Código es tu rutina diaria para convertirte en un mejor programador. ¡Supera desafíos, sube en la clasificación y únete a nuestra comunidad de desarrolladores!",
+        "logoTitle": "Daily Code Challenge",
+        "description": "Daily Code Challenge tu rutina diaria para convertirte en un mejor programador. ¡Supera desafíos, sube en la clasificación y únete a nuestra comunidad de desarrolladores!",
         "aboutUs": "Sobre Nosotros",
         "links": {
             "home": "Inicio",

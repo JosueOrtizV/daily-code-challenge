@@ -56,6 +56,10 @@ export class UserService {
             }
         });
     }
+
+    setLoggedInState(loggedIn: boolean): void { 
+        this.loggedInSubject.next(loggedIn); 
+    }
     
     async loadUserData(): Promise<void> {
         const user = this.auth.currentUser;

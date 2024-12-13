@@ -73,6 +73,14 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.isSticky = window.pageYOffset >= stickyPoint;
   }
 
+  @HostListener('document:click', ['$event'])
+  onDocumentClick(event: MouseEvent) {
+    const target = event.target as HTMLElement;
+    if (this.isTogglerActive && !target.closest('.navbar-toggler') && !target.closest('#navbarSupportedContent')) {
+      this.closeToggler();
+    }
+  }
+
   toggleLanguage() {
     const newLang = this.language === 'en' ? 'es' : 'en';
     this.languageService.setLanguage(newLang);

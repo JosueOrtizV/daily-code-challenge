@@ -88,14 +88,13 @@
                 "errorCheckingCode": "Error checking code: {{errorMessage}}",
                 "warningMessage": "Warning Message",
                 "checkingMessage": "Checking Message",
-                "textareaPlaceholder": "Paste your code here to check it & get feedback & score. Your exercise will be marked as completed after you press the button below.",
-                "checkYourCode": "Check Your Code",
+                "textareaPlaceholder": "Paste your code here to review it and receive feedback and a score. The score will depend on the difficulty of the exercise you completed.",                "checkYourCode": "Check Your Code",
                 "pressToMark": "Press to mark your exercise as completed",
                 "challengeCompleted": "Challenge Completed!",
                 "score": "Score",
                 "globalScore": "Global Score",
                 "feedback": "Feedback",
-                "scoreMult": "Score multiplier:\n- Easy: 1.0\n- Intermediate: 1.5\n- Hard: 2.0\n- Extreme: 2.5\nFinal score will be normalized from 0 to 10.",
+                "scoreMult": "Select the difficulty before clicking on 'Check your code'.",
                 "nextChallenge": "Next challenge will be available in:"
             }
         },

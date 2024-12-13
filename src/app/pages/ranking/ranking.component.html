@@ -1,7 +1,7 @@
 <div id="leaderboard" class="leaderboard-section">
     <section class="container leaderboard-container">
         <h1>{{ 'leaderboard.title' | translate }}</h1>
-        
+
         <div class="filters">
             <button (click)="changeFilter('daily')" [class.active]="filter === 'daily'">
                 {{ 'leaderboard.filters.daily' | translate }}
@@ -16,7 +16,7 @@
                 {{ 'leaderboard.filters.global' | translate }}
             </button>
         </div>
-        
+
         <table class="leaderboard-table">
             <thead>
                 <tr>
@@ -26,7 +26,8 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let index of [].constructor(10); let i = index">
+                <tr *ngFor="let index of [].constructor(10); let i = index" 
+                    [class.highlight]="loggedIn && userRank && userRank.username === leaderboard[i]?.username">
                     <td>{{ i + 1 }}</td>
                     <td>{{ leaderboard[i]?.username || '--' }}</td>
                     <td>

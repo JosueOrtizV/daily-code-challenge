@@ -30,7 +30,7 @@ export class CheckCodeComponent implements AfterViewInit, OnInit, OnDestroy {
   @Input() language!: string;
   @Input() loggedIn!: boolean;
   editor: EditorView | undefined;
-  maxCharacters: number = 1000;
+  maxCharacters: number = 1500;
   feedback: string = '';
   checkingMessage: string = '';
   userCode: string = '';

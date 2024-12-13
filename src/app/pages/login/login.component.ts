@@ -51,6 +51,8 @@ export class LoginComponent implements OnInit, OnDestroy {
       this.loggedIn = loggedIn; 
       if (loggedIn) {
         this.startCountdown();
+      } else {
+        this.cancelCountdown();
       }
     });
   }
@@ -58,14 +60,11 @@ export class LoginComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.destroy$.next();
     this.destroy$.complete();
-
-    if (this.countdownTimeout) {
-      clearInterval(this.countdownTimeout);
-    }
+    this.cancelCountdown();
   }
 
   private startCountdown() {
-    let countdown = 5;
+    let countdown = 10;
     this.countdownMessage = this.translate.instant('login.redirect_message', { seconds: countdown });
 
     this.countdownTimeout = setInterval(() => {
@@ -77,6 +76,13 @@ export class LoginComponent implements OnInit, OnDestroy {
         this.router.navigate(['/daily-challenge']);
       }
     }, 1000);
+  }
+
+  private cancelCountdown() {
+    if (this.countdownTimeout) {
+      clearInterval(this.countdownTimeout);
+      this.countdownMessage = '';
+    }
   }
 
   private setTemporaryError(subject: BehaviorSubject<string | null>, message: string) {
@@ -97,36 +103,43 @@ export class LoginComponent implements OnInit, OnDestroy {
   async confirmLogin() {
     this.hideLoginConfirm();
     try {
-      await this.loginService.loginAnonymously(this.username);
-      this.errorAnonymousSubject.next(null);
+        await this.loginService.loginAnonymously(this.username);
+        this.errorAnonymousSubject.next(null);
+        this.userService.setLoggedInState(true);
     } catch (error) {
-      let errorMsg = this.translate.instant('login.error_anonymous_login');
-      if (error instanceof Error) {
-        errorMsg = this.translate.instant(error.message, { username: this.username });
-      }
-      this.setTemporaryError(this.errorAnonymousSubject, errorMsg);
+        let errorMsg = this.translate.instant('login.error_anonymous_login');
+        if (error instanceof Error) {
+            errorMsg = this.translate.instant(error.message, { username: this.username });
+        }
+        this.setTemporaryError(this.errorAnonymousSubject, errorMsg);
+        this.userService.setLoggedInState(false);
     }
-  }
+}
 
-  async loginWithGoogle() {
+async loginWithGoogle() {
     try {
-      await this.authService.loginWithGoogle();
-      this.loggedIn = true;
-      this.errorGoogleSubject.next(null);
+        await this.authService.loginWithGoogle();
+        this.loggedIn = true;
+        this.errorGoogleSubject.next(null);
+        this.userService.setLoggedInState(true);
     } catch (error) {
-      const errorMsg = this.translate.instant('login.error_google_login');
-      this.setTemporaryError(this.errorGoogleSubject, errorMsg);
+        const errorMsg = this.translate.instant('login.error_google_login');
+        this.setTemporaryError(this.errorGoogleSubject, errorMsg);
+        this.userService.setLoggedInState(false);
     }
-  }
+}
 
-  async loginWithGithub() {
+async loginWithGithub() {
     try {
-      await this.authService.loginWithGithub();
-      this.loggedIn = true;
-      this.errorGithubSubject.next(null);
+        await this.authService.loginWithGithub();
+        this.loggedIn = true;
+        this.errorGithubSubject.next(null);
+        this.userService.setLoggedInState(true);
     } catch (error) {
-      const errorMsg = this.translate.instant('login.error_github_login');
-      this.setTemporaryError(this.errorGithubSubject, errorMsg);
+        const errorMsg = this.translate.instant('login.error_github_login');
+        this.setTemporaryError(this.errorGithubSubject, errorMsg);
+        this.userService.setLoggedInState(false);
     }
-  }
+}
+
 }
