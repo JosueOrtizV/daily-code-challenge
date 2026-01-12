@@ -10,18 +10,14 @@ import { environment } from '../../environments/environment';
 export class CsrfService {
     constructor(private http: HttpClient) {}
 
-    getCsrfToken(): Observable<{ csrfToken: string }> {
-        return this.http.get<{ csrfToken: string }>(`${environment.apiUrl}/csrf-token`, { withCredentials: true }).pipe(
-            tap(response => {
-                this.setCookie('XSRF-TOKEN', response.csrfToken);
+    getCsrfToken(): Observable<any> {
+        return this.http.get(`${environment.apiUrlCsrf}/sanctum/csrf-cookie`, { withCredentials: true }).pipe(
+            tap(() => {
             }),
             catchError((error) => {
+                console.error('Error al obtener la CSRF cookie:', error);
                 throw error;
             })
         );
-    }
-
-    private setCookie(name: string, value: string) {
-        document.cookie = `${name}=${value};path=/;`;
     }
 }

@@ -11,7 +11,7 @@ import Cookies from 'js-cookie';
     providedIn: 'root',
 })
 export class AuthService {
-    private ANONYMOUS_UID_COOKIE = 'anonymousUid';
+    private ANONYMOUS_UID = 'anonymousUid';
 
     constructor(
         private auth: Auth,
@@ -25,26 +25,25 @@ export class AuthService {
     }
 
     getAnonymousUid(): string | null {
-        return Cookies.get(this.ANONYMOUS_UID_COOKIE) || null;
+        return localStorage.getItem(this.ANONYMOUS_UID) || null;
     }
 
     private setAnonymousUid(uid: string): void {
-        Cookies.set(this.ANONYMOUS_UID_COOKIE, uid, { expires: 7, secure: true, sameSite: 'Strict' });
-        console.log('cookie set');
+        localStorage.setItem(this.ANONYMOUS_UID, uid);
     }
     
 
     private clearAnonymousUid(): void {
-        Cookies.remove(this.ANONYMOUS_UID_COOKIE);
+        localStorage.removeItem(this.ANONYMOUS_UID);
     }
 
     async loginWithGoogle(): Promise<void> {
         try {
             const result = await signInWithPopup(this.auth, new GoogleAuthProvider());
             const token = await getIdToken(result.user);
+            const decodedToken = await this.auth.currentUser?.getIdTokenResult();
             const username = this.normalizeUsername(result.user.displayName || '');
 
-            await this.csrfService.getCsrfToken().toPromise();
             await this.saveOrUpdateUser(username, token);
             await this.userService.loadUserData();
         } catch (error) {
@@ -58,9 +57,9 @@ export class AuthService {
         try {
             const result = await signInWithPopup(this.auth, new GithubAuthProvider());
             const token = await getIdToken(result.user);
+            const decodedToken = await this.auth.currentUser?.getIdTokenResult();
             const username = this.normalizeUsername(result.user.displayName || '');
             
-            await this.csrfService.getCsrfToken().toPromise();
             await this.saveOrUpdateUser(username, token);
             await this.userService.loadUserData();
         } catch (error) {
@@ -81,26 +80,32 @@ export class AuthService {
                 result = await signInWithCustomToken(this.auth, customToken);
             } else {
                 result = await signInAnonymously(this.auth);
+    
                 anonymousUid = result.user.uid;
-                this.setAnonymousUid(anonymousUid);
             }
     
             const token = await getIdToken(result.user);
+    
             await this.saveOrUpdateUser(username, token);
             await this.userService.loadUserData();
+    
+
+            if (!this.getAnonymousUid() && anonymousUid) {
+                this.setAnonymousUid(anonymousUid);
+            }
         } catch (error) {
             console.error('Error logging in anonymously:', error);
             await this.handleLoginError();
             throw new Error('Anonymous login failed');
         }
-    }
-    
+    }    
 
     async getCustomToken(uid: string, username: string): Promise<string> {
         try {
+            await this.csrfService.getCsrfToken().toPromise();
             const response = await this.http.post<{ customToken: string }>(
                 `${environment.apiUrl}/user/generateCustomToken`, 
-                { uid, username }
+                { uid, username }, { withCredentials: true }
             ).toPromise();
             if (response) {
                 return response?.customToken;
@@ -115,11 +120,13 @@ export class AuthService {
 
     async checkUsernameAndUid(username: string, uid: string): Promise<boolean> {
         try {
-            const response = await this.http.post<{ valid: boolean }>(
-                `${environment.apiUrl}/user/checkUsernameAndUid`,
-                { username, uid }
+            const response = await this.http.get<{ valid: boolean }>(
+                `${environment.apiUrl}/user/checkUsernameAndUid`, 
+                {
+                    params: { username, uid }
+                }
             ).toPromise();
-
+    
             if (response) {
                 return response.valid;
             } else {
@@ -133,33 +140,40 @@ export class AuthService {
             throw new Error('Error checking username and UID');
         }
     }
+    
 
     
 
     async saveOrUpdateUser(username: string, token: string): Promise<void> {
         try {
-            const csrfToken = await this.csrfService.getCsrfToken().toPromise();
-            if (csrfToken) {
-                const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`).set('X-XSRF-TOKEN', csrfToken?.csrfToken || '');
-    
-                await this.http.post(`${environment.apiUrl}/user/saveOrUpdateUser`, { username, token }, { headers, withCredentials: true }).toPromise();
-            }
-
+                await this.csrfService.getCsrfToken().toPromise();
+                const headers = new HttpHeaders()
+                    .set('Authorization', `Bearer ${token}`)
+                
+                await this.http.post(
+                    `${environment.apiUrl}/user/saveOrUpdateUser`,
+                    { username, token },
+                    { headers, withCredentials: true }
+                ).toPromise();
+            
         } catch (error) {
+            await this.handleLoginError();
             console.error('Error saving or updating user:', error);
-            await this.logout();
             throw new Error('Save or update user failed');
         }
     }
     
+    
 
     async checkUsernameAvailability(username: string): Promise<boolean> {
         try {
-            const response = await this.http.post<{ available: boolean }>(
-                `${environment.apiUrl}/user/checkUsernameAvailability`,
-                { username },
-                { withCredentials: true }
+            const response = await this.http.get<{ available: boolean }>(
+                `${environment.apiUrl}/user/checkUsernameAvailability`, 
+                {
+                    params: { username }
+                }
             ).toPromise();
+    
             if (response) {
                 return response.available;
             } else {
@@ -170,6 +184,7 @@ export class AuthService {
             throw new Error('Error checking username availability');
         }
     }
+    
 
     async getUserToken(): Promise<string | null> {
         try {

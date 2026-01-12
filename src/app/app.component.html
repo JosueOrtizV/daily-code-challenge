@@ -1,7 +1,6 @@
 <app-header></app-header>
 <router-outlet></router-outlet>
-<div *ngIf="loading" class="loading-spinner">
-    <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
-    <p>Loading...</p>
+<div *ngIf="loading" class="loading-spinner-global">
+    <app-loading></app-loading>
 </div>
 <app-footer></app-footer>

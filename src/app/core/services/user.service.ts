@@ -68,8 +68,7 @@ export class UserService {
             const token = await user.getIdToken();
             
             this.http.get<{ username: string, lastCompletedExercise: string, scores: { dailyScore: number, weeklyScore: number, monthlyScore: number, globalScore: number }, recentActivity: Activity[] }>(`${environment.apiUrl}/user/getUserData`, { 
-                headers: new HttpHeaders().set('Authorization', `Bearer ${token}`),
-                withCredentials: true 
+                headers: new HttpHeaders().set('Authorization', `Bearer ${token}`)
             }).pipe(
                 tap(response => {
                     this.usernameSubject.next(response.username);

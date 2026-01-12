@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http';
 import { UserService } from '../../core/services/user.service';
 import { AuthService } from '../../core/services/auth.service';
+import { CsrfService } from '../../core/services/csrf.service';
 import { UsernameComponent } from "../../components/daily-challenge/username/username.component";
 import { LanguageService } from '../../core/services/language.service';
 import { TranslateService, TranslateModule } from '@ngx-translate/core';
@@ -40,7 +41,8 @@ export class MoreChallengesComponent implements OnInit, AfterViewInit {
     private authService: AuthService, 
     private UserService: UserService, 
     private languageService: LanguageService,
-    private translate: TranslateService
+    private translate: TranslateService,
+    private csrfService: CsrfService
   ) {}
 
   ngOnInit(): void {
@@ -133,8 +135,8 @@ export class MoreChallengesComponent implements OnInit, AfterViewInit {
       difficulty: this.difficulty,
       language: this.language
     };
-
-    this.http.post<{ status: string, challenge: any }>(`${environment.apiUrl}/getMoreChallenges`, body, { headers })
+    await this.csrfService.getCsrfToken().toPromise();
+    this.http.post<{ status: string, challenge: any }>(`${environment.apiUrl}/getMoreChallenges`, body, { headers, withCredentials:true })
     .subscribe(response => {
       this.loadingChallenge = false;
       if (response.status === 'success') {

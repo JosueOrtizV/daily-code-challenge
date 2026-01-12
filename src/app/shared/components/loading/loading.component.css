@@ -1,0 +1,37 @@
+section{
+    width: 100%;
+}
+
+
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.loading-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+img{
+    width: 100%;
+    height: auto;
+    max-width: 3rem;
+}
+
+::ng-deep .mat-mdc-progress-spinner .mdc-circular-progress__determinate-circle,
+::ng-deep .mat-mdc-progress-spinner .mdc-circular-progress__indeterminate-circle-graphic {
+  stroke: var(--color-secondary) !important;
+}
+
+@media (max-width: 575.98px) {
+    img{
+        max-width: 2rem;
+    }
+}

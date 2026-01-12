@@ -50,6 +50,10 @@ app-root {
     grid-template-rows: auto 1fr auto;
 }
 
+app-loading{
+    width: 100%;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -259,7 +263,7 @@ p {
     opacity: 1;
 }
 
-.loading-spinner {
+.loading-spinner, .loading-spinner-global {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -273,11 +277,15 @@ p {
     z-index: 9999;
 }
 
-.mat-spinner {
-    margin-bottom: 20px;
+.loading-spinner-global{
+    background-color: rgba(255, 255, 255, 1);
 }
 
-
+mat-progress-spinner{
+    width: 3rem !important;
+    height: 3rem !important;
+    margin: 0 auto;
+}
 
 /* Media Queries */
 

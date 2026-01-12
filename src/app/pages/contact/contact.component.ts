@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { UserService } from '../../core/services/user.service';
 import { AuthService } from '../../core/services/auth.service';
+import { CsrfService } from '../../core/services/csrf.service';
 import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Subject } from 'rxjs';
@@ -26,6 +27,7 @@ export class ContactComponent implements OnInit, OnDestroy {
     private userService: UserService,
     private authService: AuthService,
     private translate: TranslateService,
+    private csrfService: CsrfService,
     private http: HttpClient
   ) {}
 
@@ -65,7 +67,8 @@ export class ContactComponent implements OnInit, OnDestroy {
     const message = (form.elements.namedItem('message') as HTMLTextAreaElement).value;
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
     const body = { username, email, subject, message };
-
+    await this.csrfService.getCsrfToken().toPromise();
+    
     this.http.post(`${environment.apiUrl}/user/contact`, body, { headers }).subscribe(
       response => {
         this.warningMessage = this.translate.instant('contact.successMessage');

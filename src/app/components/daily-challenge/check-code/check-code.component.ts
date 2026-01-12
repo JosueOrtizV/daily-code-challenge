@@ -11,6 +11,7 @@ import { Subject, BehaviorSubject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import moment from 'moment-timezone';
 import { UserService } from '../../../core/services/user.service';
+import { CsrfService } from '../../../core/services/csrf.service';
 import { environment } from '../../../environments/environment';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
@@ -30,7 +31,7 @@ export class CheckCodeComponent implements AfterViewInit, OnInit, OnDestroy {
   @Input() language!: string;
   @Input() loggedIn!: boolean;
   editor: EditorView | undefined;
-  maxCharacters: number = 1500;
+  maxCharacters: number = 3000;
   feedback: string = '';
   checkingMessage: string = '';
   userCode: string = '';
@@ -49,7 +50,8 @@ export class CheckCodeComponent implements AfterViewInit, OnInit, OnDestroy {
     private renderer: Renderer2,
     private http: HttpClient,
     private translate: TranslateService,
-    private UserService: UserService
+    private UserService: UserService,
+    private csrfService: CsrfService
   ) {}
   
   ngOnInit(): void {
@@ -168,9 +170,9 @@ export class CheckCodeComponent implements AfterViewInit, OnInit, OnDestroy {
     
     this.checkingMessage = this.translate.instant('dailyChallenge.checkCode.messages.checkingCode');
     try {
+      await this.csrfService.getCsrfToken().toPromise();
       const response: any = await this.http.post(`${environment.apiUrl}/checkCode`, body, { headers }).toPromise();
       if (response.status === 'success') {
-        console.log(response);
         
         this.feedback = response.feedback;
         this.score = response.score;
